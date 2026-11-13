@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Firearms Knowledge Archive | History, Manufacturers &amp; Reference</title>
+<meta name="description" content="An educational reference archive on the history, development, manufacturers, categories and notable models of firearms. Historical and informational use only.">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Firearms Knowledge Archive | History, Manufacturers &amp; Reference">
+<meta property="og:description" content="Explore the history, development, manufacturers, categories and notable models of firearms through an educational reference.">
+<meta property="og:image" content="images/hero-background.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+/* Apply the saved theme before first paint to avoid a flash. */
+(function(){try{var t=JSON.parse(localStorage.getItem('fka_theme'));if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}document.documentElement.className='js';})();
+</script>
+<style>
+/* =====================================================================
+   FIREARMS KNOWLEDGE ARCHIVE  -  STYLES
+   Theme colours live in CSS variables so dark/light mode is one switch.
+   ===================================================================== */
+:root, :root[data-theme="dark"]{
+  --bg:#0c0e11; --bg2:#11141a; --card:#151920; --card2:#1b2029;
+  --border:rgba(255,255,255,.09); --border-strong:rgba(255,255,255,.18);
+  --text:#e7e9ec; --muted:#9aa4af; --steel:#8fa3b8;
+  --accent:#c9a45c; --accent-ink:#17120a; --accent-soft:rgba(201,164,92,.14);
+  --shadow:0 10px 30px rgba(0,0,0,.45); --glass:rgba(17,20,26,.78);
+  --ph1:#1a2029; --ph2:#10141a; --warn:#d9b26a;
+}
+:root[data-theme="light"]{
+  --bg:#f3f1ec; --bg2:#eae7e0; --card:#ffffff; --card2:#f7f5f0;
+  --border:rgba(20,24,30,.12); --border-strong:rgba(20,24,30,.28);
+  --text:#1a1d22; --muted:#56606b; --steel:#4c6177;
+  --accent:#86671c; --accent-ink:#ffffff; --accent-soft:rgba(134,103,28,.12);
+  --shadow:0 10px 28px rgba(30,30,30,.12); --glass:rgba(255,255,255,.82);
+  --ph1:#e4e1da; --ph2:#d6d2c9; --warn:#8a5d0b;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;transition:background .3s,color .3s}
+body.noscroll{overflow:hidden}
+h1,h2,h3,h4{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;line-height:1.2;margin:0 0 .5em;font-weight:600;letter-spacing:.01em}
+p{margin:0 0 1em}
+a{color:var(--accent)}
+img{max-width:100%}
+.container{width:min(1240px,100% - 2.5rem);margin-inline:auto}
+.ic{width:1.25em;height:1.25em;flex:none;vertical-align:-.25em}
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:var(--accent-ink);padding:.6rem 1rem;z-index:200}
+.skip:focus{left:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.25rem;border-radius:8px;border:1px solid var(--border-strong);background:transparent;color:var(--text);font:inherit;font-weight:600;font-size:.92rem;cursor:pointer;text-decoration:none;transition:transform .2s,background .2s,border-color .2s,color .2s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{color:var(--accent-ink);filter:brightness(1.08);transform:translateY(-1px)}
+.btn-sm{padding:.4rem .8rem;font-size:.82rem}
+.icon-btn{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;position:relative;transition:border-color .2s,color .2s,background .2s}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.badge{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;border-radius:9px;background:var(--accent);color:var(--accent-ink);font-size:.68rem;font-weight:700;display:grid;place-items:center;padding:0 4px}
+.chip{display:inline-block;padding:.25rem .7rem;border-radius:999px;border:1px solid var(--border);background:var(--accent-soft);color:var(--text);font-size:.8rem;font:inherit;font-size:.8rem;cursor:pointer;text-decoration:none}
+button.chip:hover,a.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip.active{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.4rem}
+
+/* ---------- Header / Navigation ---------- */
+.site-header{position:sticky;top:0;z-index:100;background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-wrap{display:flex;align-items:center;gap:1rem;height:66px;width:min(1400px,100% - 2rem);margin-inline:auto}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--text);flex:none}
+.brand-mark{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(145deg,var(--accent),#7d8da0);color:var(--accent-ink)}
+.brand-text{font-family:Georgia,serif;font-size:.98rem;letter-spacing:.04em;line-height:1.1;text-transform:uppercase}
+.brand-text b{display:block;font-size:.66rem;letter-spacing:.3em;color:var(--accent);font-weight:600}
+#primaryNav{flex:1;min-width:0}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;align-items:center;justify-content:center;gap:.1rem}
+.nav-list a,.nav-btn{display:block;padding:.5rem .55rem;border-radius:6px;font:inherit;font-size:.8rem;font-weight:600;letter-spacing:.02em;color:var(--muted);text-decoration:none;background:none;border:0;cursor:pointer;white-space:nowrap;transition:color .2s,background .2s}
+.nav-list a:hover,.nav-btn:hover,.has-mega.open .nav-btn{color:var(--text);background:var(--accent-soft)}
+.nav-tools{display:flex;gap:.45rem;align-items:center;flex:none}
+.burger{display:none}
+.has-mega{position:static}
+.mega{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg2);border-bottom:1px solid var(--border);box-shadow:var(--shadow);padding:1.5rem 0 1.8rem}
+.mega-grid{width:min(1240px,100% - 2.5rem);margin-inline:auto;display:grid;grid-template-columns:repeat(6,1fr);gap:1.4rem}
+.mega-col ul{list-style:none;margin:.4rem 0 0;padding:0}
+.mega-col a{display:block;padding:.2rem 0;font-size:.84rem;color:var(--muted);white-space:normal;background:none}
+.mega-col a:hover{color:var(--accent);background:none}
+.mega-col .mega-h{font-family:Georgia,serif;font-size:1rem;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:.35rem}
+.has-mega.open .mega{display:block}
+@media (hover:hover) and (min-width:1241px){.has-mega:hover .mega{display:block}.has-mega:hover .nav-btn{color:var(--text);background:var(--accent-soft)}}
+
+/* ---------- Hero ---------- */
+/* To use your own hero photo, put it at images/hero-background.jpg (or change this variable). */
+:root{--hero-image:url("images/hero-background.jpg")}
+.hero{position:relative;min-height:calc(100vh - 66px);min-height:calc(100svh - 66px);display:flex;align-items:center;color:#eceef1;overflow:hidden;
+  background:
+   radial-gradient(1000px 520px at 78% 18%,rgba(201,164,92,.16),transparent 60%),
+   linear-gradient(180deg,rgba(9,11,14,.55) 0%,rgba(9,11,14,.88) 100%),
+   var(--hero-image) center/cover no-repeat,
+   linear-gradient(135deg,#171c24,#0a0c0f)}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 46px),repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 46px);mask-image:linear-gradient(180deg,#000,transparent 85%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.hero .container{position:relative;padding:4rem 0}
+.hero h1{font-size:clamp(2.2rem,6vw,4.6rem);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4em;max-width:16ch}
+.hero h1 span{color:#c9a45c}
+.hero p.lead{font-size:clamp(1rem,1.7vw,1.25rem);color:#b8c0c9;max-width:60ch}
+.hero .eyebrow{color:#c9a45c}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin:2rem 0 2.2rem}
+.hero .btn{color:#eceef1;border-color:rgba(255,255,255,.3)}
+.hero .btn-primary{background:#c9a45c;color:#17120a;border-color:#c9a45c}
+.hero-points{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;color:#98a3ae;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase}
+.hero-points span::before{content:"";display:inline-block;width:6px;height:6px;background:#c9a45c;margin-right:.55rem;transform:rotate(45deg)}
+
+/* ---------- Sections ---------- */
+section.block{padding:5rem 0;border-top:1px solid var(--border)}
+section.alt{background:var(--bg2)}
+.sec-head{max-width:760px;margin-bottom:2.2rem}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}
+.sec-head p{color:var(--muted)}
+
+/* ---------- Search ---------- */
+.search-box{position:relative;max-width:820px}
+.search-field{display:flex;align-items:center;gap:.7rem;background:var(--card);border:1px solid var(--border-strong);border-radius:12px;padding:.25rem .6rem .25rem 1rem;box-shadow:var(--shadow)}
+.search-field:focus-within{border-color:var(--accent)}
+.search-field input{flex:1;min-width:0;background:none;border:0;color:var(--text);font:inherit;font-size:1.05rem;padding:.8rem 0;outline:none}
+.search-field input::placeholder{color:var(--muted)}
+.suggest{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:30;list-style:none;margin:0;padding:.35rem;background:var(--card);border:1px solid var(--border-strong);border-radius:12px;box-shadow:var(--shadow);max-height:360px;overflow:auto}
+.suggest li{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem .7rem;border-radius:8px;cursor:pointer}
+.suggest li:hover,.suggest li.active{background:var(--accent-soft)}
+.suggest small,.sr-type{color:var(--muted);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.try{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;color:var(--muted);font-size:.85rem}
+#searchResults{margin-top:2rem}
+.sr-group h3{font-size:1.05rem;color:var(--steel);margin:1.6rem 0 .8rem;text-transform:uppercase;letter-spacing:.1em;font-family:system-ui,sans-serif;font-size:.78rem}
+.sr-list{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.sr-row{display:flex;justify-content:space-between;gap:1rem;align-items:center;width:100%;text-align:left;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.7rem .9rem;color:var(--text);font:inherit;cursor:pointer}
+.sr-row:hover{border-color:var(--accent)}
+.empty{padding:2rem;border:1px dashed var(--border-strong);border-radius:12px;color:var(--muted);text-align:center}
+
+/* ---------- Cards ---------- */
+.grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.cat-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:14px;overflow:hidden;position:relative;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-3px);border-color:var(--border-strong);box-shadow:var(--shadow)}
+.fcard{cursor:pointer;display:flex;flex-direction:column}
+.card-body{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.2rem;margin-bottom:.2rem}
+.card .meta{color:var(--steel);font-size:.82rem;margin-bottom:.6rem}
+.card .desc{color:var(--muted);font-size:.9rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:.9rem}
+.card-link{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-align:left}
+.card-link:hover{color:var(--accent)}
+.more{margin-top:auto;font-size:.82rem;font-weight:700;color:var(--accent);letter-spacing:.04em}
+.fav{position:absolute;top:10px;right:10px;z-index:3;width:36px;height:36px;border-radius:50%;border:1px solid var(--border-strong);background:var(--glass);color:var(--text);display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px)}
+.fav:hover{color:var(--accent);border-color:var(--accent)}
+.fav[aria-pressed="true"]{color:var(--accent)}
+.fav[aria-pressed="true"] svg{fill:currentColor}
+.catcard{padding:1.5rem;display:flex;flex-direction:column;gap:.5rem}
+.catcard .cc-ic{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);margin-bottom:.4rem}
+.catcard .cc-ic .ic{width:30px;height:30px}
+.catcard p{color:var(--muted);font-size:.92rem;margin:0}
+.catcard .count{font-size:.8rem;color:var(--steel);letter-spacing:.06em;text-transform:uppercase}
+.catcard .btn{align-self:flex-start;margin-top:.6rem}
+.subchips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.3rem 0}
+
+/* ---------- Image box / placeholder ---------- */
+.imgbox{position:relative;aspect-ratio:16/10;overflow:hidden;background:linear-gradient(145deg,var(--ph1),var(--ph2));border-bottom:1px solid var(--border)}
+.imgbox img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.imgbox .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;color:var(--steel);text-align:center;padding:.5rem;background:repeating-linear-gradient(45deg,transparent 0 14px,rgba(255,255,255,.02) 14px 28px)}
+.imgbox .ph-ic{width:38px;height:38px;opacity:.7}
+.imgbox .ph-t{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+.imgbox .ph-p{font-size:.68rem;font-family:ui-monospace,Menlo,Consolas,monospace;opacity:.7;word-break:break-all}
+.card:hover .imgbox img,.gallery-main:hover img{transform:scale(1.05)}
+.imgbox.small{aspect-ratio:4/3}
+
+/* ---------- Explorer ---------- */
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem;margin-bottom:1rem}
+.field label{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+select,.field input[type=text],.field input[type=search]{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--border-strong);border-radius:8px;padding:.55rem .6rem;font:inherit;font-size:.9rem}
+.toolbar{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+.toolbar .left,.toolbar .right{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.count-pill{color:var(--muted);font-size:.9rem}
+.count-pill b{color:var(--text)}
+.loadmore{text-align:center;margin-top:1.8rem}
+.sub-h{margin:3rem 0 1rem;font-size:1.4rem}
+
+/* ---------- Manufacturers ---------- */
+.region h3{font-size:1.5rem;border-bottom:1px solid var(--border);padding-bottom:.4rem;margin:2.4rem 0 1rem}
+.region h4{font-family:system-ui,sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--steel);margin:1.2rem 0 .6rem}
+.mgrid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.mcard{padding:1.1rem 1.2rem;cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%}
+.mcard h5{margin:0 0 .15rem;font:600 1.1rem Georgia,serif}
+.mcard p{margin:0;color:var(--muted);font-size:.85rem}
+.mcard .tags{margin-top:.6rem;display:flex;gap:.35rem;flex-wrap:wrap}
+
+/* ---------- Timeline ---------- */
+.era-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.era-desc{color:var(--muted);margin-bottom:2rem;min-height:1.6em}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(var(--accent),var(--border));transform:translateX(-50%)}
+.tl-item{position:relative;width:50%;padding:0 2.5rem 2rem 0;text-align:right}
+.tl-item:nth-child(even){margin-left:50%;padding:0 0 2rem 2.5rem;text-align:left}
+.tl-item::after{content:"";position:absolute;top:.6rem;right:-7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl-item:nth-child(even)::after{right:auto;left:-7px}
+.tl-year{font:700 1.6rem Georgia,serif;color:var(--accent)}
+.tl-card{display:inline-block;max-width:100%;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;text-align:left}
+.tl-card h4{font-size:1.05rem;margin-bottom:.3rem}
+.tl-card p{color:var(--muted);font-size:.9rem;margin:0 0 .5rem}
+.tl-era{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--steel)}
+
+/* ---------- Knowledge / glossary ---------- */
+.topic{padding:1.3rem;cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%;display:flex;flex-direction:column;gap:.4rem}
+.topic h3{font-size:1.1rem;margin:0}
+.topic p{color:var(--muted);font-size:.9rem;margin:0}
+.glossary{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.5rem}
+.term{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.65rem .9rem;text-align:left;font:inherit;color:var(--text);cursor:pointer;font-weight:600}
+.term:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- Videos ---------- */
+.vcard{padding:1.2rem;display:flex;flex-direction:column;gap:.5rem}
+.vcard p{color:var(--muted);font-size:.9rem;margin:0 0 .4rem}
+.vcard .btn{align-self:flex-start;margin-top:auto}
+.yt{color:#e5484d}
+
+/* ---------- Stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem}
+.stat{text-align:center;padding:1.6rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:14px}
+.stat b{display:block;font:700 clamp(2rem,4vw,3rem) Georgia,serif;color:var(--accent)}
+.stat span{color:var(--muted);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- About / footer ---------- */
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.about-grid .card{padding:1.4rem}
+.about-grid ul{padding-left:1.1rem;color:var(--muted);margin:0}
+.disclaimer{border-left:3px solid var(--accent);background:var(--accent-soft);padding:1rem 1.2rem;border-radius:0 10px 10px 0;margin-top:1.6rem}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 0 1.5rem}
+.foot-grid{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:2rem}
+.foot-grid h4{font-family:system-ui,sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+.foot-grid ul{list-style:none;margin:0;padding:0}
+.foot-grid li{margin:.3rem 0}
+.foot-grid a{color:var(--muted);text-decoration:none;font-size:.92rem}
+.foot-grid a:hover{color:var(--accent)}
+.foot-bottom{border-top:1px solid var(--border);margin-top:2rem;padding-top:1.2rem;color:var(--muted);font-size:.82rem}
+
+/* ---------- Modal ---------- */
+.modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:1.5rem;opacity:0;transition:opacity .22s}
+.modal.show{opacity:1}
+.modal-backdrop{position:absolute;inset:0;background:rgba(5,7,9,.72);backdrop-filter:blur(4px)}
+.modal-panel{position:relative;width:min(1080px,100%);max-height:100%;overflow:auto;background:var(--bg);border:1px solid var(--border-strong);border-radius:16px;box-shadow:var(--shadow);transform:translateY(16px) scale(.985);transition:transform .25s}
+.modal.show .modal-panel{transform:none}
+.modal-top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:.7rem;padding:.7rem 1rem;background:var(--glass);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.crumbs{flex:1;min-width:0;font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.2rem .35rem;align-items:center}
+.crumbs a,.crumbs button{color:var(--muted);background:none;border:0;padding:0;font:inherit;cursor:pointer;text-decoration:none}
+.crumbs a:hover,.crumbs button:hover{color:var(--accent)}
+.crumbs .cur{color:var(--text);font-weight:600}
+.crumbs .sep{opacity:.5}
+.modal-body{padding:1.6rem 1.8rem 2.2rem}
+.detail-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:2rem;margin-bottom:1.5rem}
+.gallery-main{display:block;width:100%;padding:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:zoom-in;background:none}
+.gallery-main .imgbox{border:0}
+.thumbs{display:flex;gap:.6rem;margin-top:.6rem;flex-wrap:wrap}
+.thumb{width:84px;padding:0;border:2px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;background:none}
+.thumb.active{border-color:var(--accent)}
+.thumb .imgbox{aspect-ratio:4/3;border:0}
+.thumb .ph-t,.thumb .ph-p{display:none}
+.thumb .ph-ic{width:22px;height:22px}
+.detail-top h2{font-size:clamp(1.7rem,3.4vw,2.6rem);margin-bottom:.6rem}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;margin:0 0 1rem;font-size:.92rem}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0}
+.facts a,.facts button{color:var(--accent);background:none;border:0;padding:0;font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.dsec{margin-top:2rem}
+.dsec h3{font-size:1.3rem;border-bottom:1px solid var(--border);padding-bottom:.4rem;margin-bottom:.9rem}
+.spec{width:100%;border-collapse:collapse;font-size:.93rem}
+.spec th,.spec td{padding:.6rem .8rem;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.spec th{width:34%;color:var(--muted);font-weight:600}
+.callout{border:1px solid var(--warn);background:var(--accent-soft);border-radius:10px;padding:.8rem 1rem;font-size:.88rem;color:var(--text);margin:1rem 0}
+.vgrid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.vcell{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--card)}
+.vcell div.t{padding:.7rem .9rem}
+.vcell strong{display:block}
+.vcell span{font-size:.8rem;color:var(--muted)}
+.vlist{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.vlist li{display:flex;gap:1rem;align-items:center;justify-content:space-between;border:1px solid var(--border);border-radius:10px;padding:.7rem 1rem;background:var(--card);flex-wrap:wrap}
+.notice{font-size:.8rem;color:var(--muted);margin-top:2rem;border-top:1px solid var(--border);padding-top:1rem}
+.mini-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.lightbox{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.92);display:grid;place-items:center;padding:1.5rem}
+.lightbox .imgbox{width:min(1100px,92vw);aspect-ratio:16/10;border-radius:12px;border:1px solid var(--border-strong)}
+.lightbox img{object-fit:contain!important;background:#000}
+.lightbox .icon-btn{position:absolute;top:1rem;right:1rem;background:#111;color:#fff}
+.lightbox p{color:#c9d0d7;text-align:center;margin:.8rem 0 0}
+
+#toTop{position:fixed;right:1.2rem;bottom:1.2rem;z-index:90;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;background:var(--accent);color:var(--accent-ink);border-color:var(--accent);transform:translateY(10px)}
+#toTop.show{opacity:1;pointer-events:auto;transform:none}
+
+/* ---------- Scroll reveal ---------- */
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}.js .reveal{opacity:1;transform:none}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1240px){
+  .burger{display:inline-grid}
+  #primaryNav{position:fixed;top:66px;left:0;right:0;bottom:0;background:var(--bg);padding:1rem;overflow:auto;transform:translateX(100%);transition:transform .28s;border-top:1px solid var(--border)}
+  #primaryNav.open{transform:none}
+  .nav-list{flex-direction:column;align-items:stretch;gap:0}
+  .nav-list a,.nav-btn{padding:.9rem .6rem;font-size:1rem;border-bottom:1px solid var(--border);border-radius:0;width:100%;text-align:left}
+  .mega{position:static;box-shadow:none;border:0;padding:.2rem 0 .6rem .8rem;background:transparent}
+  .mega-grid{grid-template-columns:1fr 1fr;width:100%;gap:1rem}
+}
+@media (max-width:900px){
+  .detail-top{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .timeline::before{left:12px}
+  .tl-item,.tl-item:nth-child(even){width:100%;margin-left:0;padding:0 0 1.6rem 2.2rem;text-align:left}
+  .tl-item::after,.tl-item:nth-child(even)::after{left:5px;right:auto}
+}
+@media (max-width:640px){
+  section.block{padding:3.4rem 0}
+  .brand-text{display:none}
+  .modal{padding:0}
+  .modal-panel{border-radius:0;height:100%;max-height:100%}
+  .modal-body{padding:1.1rem 1rem 2rem}
+  .foot-grid{grid-template-columns:1fr}
+  .mega-grid{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr;gap:0}
+  .facts dt{margin-top:.5rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<noscript><p style="padding:1rem;text-align:center;background:#7a2a2a;color:#fff;margin:0">This archive needs JavaScript enabled to display its content.</p></noscript>
+
+<!-- ===================== HEADER / NAV ===================== -->
+<header class="site-header" id="top">
+  <div class="nav-wrap">
+    <a class="brand" href="#home" data-scroll="home" aria-label="Firearms Knowledge Archive - home">
+      <span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11a4 4 0 0 1 4 4v10H8a4 4 0 0 1-4-4z"/><path d="M8 9h7M8 13h5"/></svg></span>
+      <span class="brand-text">Firearms Knowledge<b>Archive</b></span>
+    </a>
+    <nav id="primaryNav" aria-label="Primary navigation">
+      <ul class="nav-list">
+        <li><a href="#home" data-scroll="home">Home</a></li>
+        <li class="has-mega" id="megaItem">
+          <button class="nav-btn" id="megaBtn" aria-expanded="false" aria-controls="megaMenu" aria-haspopup="true">Categories &#9662;</button>
+          <div class="mega" id="megaMenu"><div class="mega-grid" id="megaGrid"></div></div>
+        </li>
+        <li><a href="#explorer" data-cat="Handguns">Handguns</a></li>
+        <li><a href="#explorer" data-cat="SMGs">SMGs</a></li>
+        <li><a href="#explorer" data-cat="Rifles">Rifles</a></li>
+        <li><a href="#explorer" data-cat="Shotguns">Shotguns</a></li>
+        <li><a href="#explorer" data-cat="Sniper Rifles">Sniper Rifles</a></li>
+        <li><a href="#explorer" data-cat="Machine Guns">Machine Guns</a></li>
+        <li><a href="#manufacturers" data-scroll="manufacturers">Manufacturers</a></li>
+        <li><a href="#history" data-scroll="history">History</a></li>
+        <li><a href="#knowledge" data-scroll="knowledge">Knowledge</a></li>
+        <li><a href="#videos" data-scroll="videos">Videos</a></li>
+      </ul>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="navSearch" aria-label="Go to search" title="Search"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></button>
+      <button class="icon-btn" id="navFav" aria-label="My favorites" title="My favorites"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span class="badge" id="favBadge" hidden>0</span></button>
+      <button class="icon-btn" id="themeBtn" aria-label="Switch to light mode" title="Toggle theme"><span id="themeIcon" aria-hidden="true"></span></button>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home" aria-labelledby="heroTitle">
+  <div class="container">
+    <div class="eyebrow">Historical &middot; Educational &middot; Reference</div>
+    <h1 id="heroTitle">The Firearms <span>Knowledge</span> Archive</h1>
+    <p class="lead">Explore the history, development, manufacturers, categories and notable models of firearms through an educational reference.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#categories" data-scroll="categories">Explore Categories</a>
+      <a class="btn" href="#manufacturers" data-scroll="manufacturers">Explore Manufacturers</a>
+    </div>
+    <div class="hero-points"><span>History</span><span>Engineering</span><span>Documentation</span><span>Manufacturers</span></div>
+  </div>
+</section>
+
+<!-- ===================== SEARCH ===================== -->
+<section class="block alt" id="search" aria-labelledby="searchTitle">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">Search the archive</div><h2 id="searchTitle">Find a model, maker, country or term</h2><p>Search firearm models, manufacturers, categories, countries, glossary terms and historical topics.</p></div>
+    <div class="search-box reveal">
+      <div class="search-field" role="search">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>
+        <label for="searchInput" class="vh">Search the archive</label>
+        <input id="searchInput" type="search" autocomplete="off" placeholder="Try: Beretta 92FS, Colt, MG42, Shotgun, Germany, Revolver" aria-autocomplete="list" aria-controls="suggestList" aria-expanded="false">
+        <button class="btn btn-sm" id="searchClear" type="button" hidden>Clear</button>
+      </div>
+      <ul class="suggest" id="suggestList" role="listbox" aria-label="Search suggestions" hidden></ul>
+    </div>
+    <div class="try" id="tryChips"><span>Popular:</span></div>
+    <div id="searchResults" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ===================== CATEGORIES ===================== -->
+<section class="block" id="categories" aria-labelledby="catTitle">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">Browse by type</div><h2 id="catTitle">Firearm Categories</h2><p>Six major families, each with detailed subcategories. Choose one to open it in the explorer below.</p></div>
+    <div class="grid cat-grid" id="categoryGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== FEATURED ===================== -->
+<section class="block alt" id="featured" aria-labelledby="featTitle">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">Historically significant</div><h2 id="featTitle">Featured &amp; Notable Firearms</h2><p>A selection of landmark designs. Open any entry for history, general specifications, variants and related reading.</p></div>
+    <div class="grid" id="featuredGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== EXPLORER ===================== -->
+<section class="block" id="explorer" aria-labelledby="expTitle">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">Category explorer</div><h2 id="expTitle">Explore the Collection</h2><p>Filter by category, subcategory, manufacturer, country, historical period or action type, then sort the results.</p></div>
+    <div class="filters" role="group" aria-label="Filters">
+      <div class="field"><label for="fCategory">Category</label><select id="fCategory"></select></div>
+      <div class="field"><label for="fSub">Subcategory</label><select id="fSub"></select></div>
+      <div class="field"><label for="fMaker">Manufacturer</label><select id="fMaker"></select></div>
+      <div class="field"><label for="fCountry">Country</label><select id="fCountry"></select></div>
+      <div class="field"><label for="fPeriod">Historical period</label><select id="fPeriod"></select></div>
+      <div class="field"><label for="fAction">Action type</label><select id="fAction"></select></div>
+    </div>
+    <div class="toolbar">
+      <div class="left">
+        <span class="count-pill" id="resultCount" aria-live="polite"></span>
+        <button class="btn btn-sm" id="resetFilters" type="button">Reset filters</button>
+        <button class="btn btn-sm" id="favOnly" type="button" aria-pressed="false">Favorites only</button>
+      </div>
+      <div class="right field"><label for="sortBy" class="vh">Sort by</label>
+        <select id="sortBy" aria-label="Sort results">
+          <option value="az">Alphabetical A&ndash;Z</option><option value="za">Alphabetical Z&ndash;A</option>
+          <option value="oldest">Oldest first</option><option value="newest">Newest first</option>
+          <option value="maker">Manufacturer</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" id="resultsGrid"></div>
+    <div class="empty" id="resultsEmpty" hidden>No entries match these filters. Try resetting one or more filters.</div>
+    <div class="loadmore"><button class="btn" id="loadMore" type="button" hidden>Show more entries</button></div>
+
+    <h3 class="sub-h" id="favorites">My Favorites</h3>
+    <p style="color:var(--muted)">Bookmark entries with the heart icon. Favorites are saved in this browser only.</p>
+    <div class="grid" id="favGrid"></div>
+    <div class="empty" id="favEmpty">You haven&rsquo;t bookmarked anything yet. Use the heart icon on any entry.</div>
+  </div>
+</section>
+
+<!-- ===================== MANUFACTURERS ===================== -->
+<section class="block alt" id="manufacturers" aria-labelledby="mfgTitle">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">Manufacturer encyclopedia</div><h2 id="mfgTitle">Manufacturers of the World</h2><p>Organised by region and country of origin. Select a manufacturer for a historical profile. Entries marked &ldquo;Information requires verification&rdquo; are placeholders awaiting confirmed sources.</p></div>
+    <div class="filters" role="group" aria-label="Manufacturer filters">
+      <div class="field"><label for="mRegion">Region</label><select id="mRegion"></select></div>
+      <div class="field"><label for="mCountry">Country</label><select id="mCountry"></select></div>
+      <div class="field"><label for="mCategory">Category</label><select id="mCategory"></select></div>
+      <div class="field"><label for="mName">Manufacturer name</label><input id="mName" type="search" placeholder="e.g. Colt" autocomplete="off"></div>
+    </div>
+    <div class="toolbar"><div class="left"><span class="count-pill" id="mCount"></span><button class="btn btn-sm" id="mReset" type="button">Reset filters</button></div></div>
+    <div id="makerList"></div>
+    <div class="empty" id="makerEmpty" hidden>No manufacturers match these filters.</div>
+  </div>
+</section>
+
+<!-- ===================== TIMELINE ===================== -->
+<section class="block" id="history" aria-labelledby="histTitle">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">Historical timeline</div><h2 id="histTitle">A Short History of Firearm Development</h2><p>Milestones in invention, manufacturing, adoption and historical significance.</p></div>
+    <div class="era-tabs" id="eraTabs" role="group" aria-label="Filter timeline by era"></div>
+    <p class="era-desc" id="eraDesc"></p>
+    <ol class="timeline" id="timeline"></ol>
+  </div>
+</section>
+
+<!-- ===================== KNOWLEDGE ===================== -->
+<section class="block alt" id="knowledge" aria-labelledby="knowTitle">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">General knowledge</div><h2 id="knowTitle">Firearms Knowledge</h2><p>Plain-language explanations of categories, terminology and history. Descriptive reference only &mdash; not operating instructions.</p></div>
+    <div class="grid" id="topicGrid"></div>
+    <h3 class="sub-h" id="glossary">Interactive Glossary</h3>
+    <div class="field" style="max-width:360px;margin-bottom:1rem"><label for="glossSearch">Filter terms</label><input id="glossSearch" type="search" placeholder="e.g. action" autocomplete="off"></div>
+    <div class="glossary" id="glossaryGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== VIDEOS ===================== -->
+<section class="block" id="videos" aria-labelledby="vidTitle">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">Educational video resources</div><h2 id="vidTitle">Educational Videos</h2><p>Topic links open YouTube in a new tab. Current links are search placeholders &mdash; replace them with curated videos in the <code>videos</code> data array.</p></div>
+    <div class="grid" id="videoGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<section class="block alt" id="stats" aria-labelledby="statsTitle">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">The archive in numbers</div><h2 id="statsTitle">Archive Statistics</h2></div>
+    <div class="stats" id="statsGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="block" id="about" aria-labelledby="aboutTitle">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">About this project</div><h2 id="aboutTitle">About &amp; Disclaimer</h2></div>
+    <div class="about-grid">
+      <div class="card"><h3>Purpose</h3><p style="color:var(--muted)">The Firearms Knowledge Archive is a historical and educational reference covering categories, manufacturers, notable models and terminology. It is designed to grow: every entry is plain data that can be edited without changing the design.</p></div>
+      <div class="card"><h3>Content policy</h3><ul><li>No construction, manufacturing or modification guidance</li><li>No guidance on defeating safety features or increasing lethality</li><li>No acquisition, evasion or tactical-use content</li><li>Descriptive terminology only</li></ul></div>
+      <div class="card"><h3>Accuracy &amp; classification</h3><ul><li>Specifications vary by production variant</li><li>Uncertain details are labelled &ldquo;Information requires verification&rdquo;</li><li>Russian makers are grouped under Europe (Izhevsk and Tula lie in European Russia)</li><li>Israel and T&uuml;rkiye are grouped as &ldquo;Middle East &amp; T&uuml;rkiye&rdquo;</li><li>Browning is listed under the United States (Utah origin) with Belgian/FN production noted</li></ul></div>
+    </div>
+    <p class="disclaimer"><strong>Disclaimer.</strong> This website is intended for historical, educational and informational purposes. Information is presented as a reference and should not be interpreted as instructions for constructing, modifying, acquiring, or using firearms.</p>
+  </div>
+</section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div><div class="brand-text" style="margin-bottom:.8rem">Firearms Knowledge<b>Archive</b></div><p style="color:var(--muted);font-size:.9rem;max-width:42ch">A historical and educational reference on firearm categories, manufacturers and notable models.</p></div>
+      <div><h4>Explore</h4><ul><li><a href="#categories" data-scroll="categories">Categories</a></li><li><a href="#manufacturers" data-scroll="manufacturers">Manufacturers</a></li><li><a href="#history" data-scroll="history">History</a></li></ul></div>
+      <div><h4>Learn</h4><ul><li><a href="#knowledge" data-scroll="knowledge">Knowledge</a></li><li><a href="#glossary" data-scroll="glossary">Glossary</a></li><li><a href="#videos" data-scroll="videos">Videos</a></li></ul></div>
+      <div><h4>Info</h4><ul><li><a href="#about" data-scroll="about">Disclaimer</a></li><li><a href="#stats" data-scroll="stats">Statistics</a></li><li><a href="#top" data-scroll="home">Back to top</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <p style="margin:0 0 .5rem"><strong>Disclaimer:</strong> This website is intended for historical, educational and informational purposes. Information is presented as a reference and should not be interpreted as instructions for constructing, modifying, acquiring, or using firearms.</p>
+      <p style="margin:0">&copy; <span id="year"></span> Firearms Knowledge Archive. All trademarks and names belong to their respective owners.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="icon-btn" id="toTop" aria-label="Back to top"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<!-- Detail modal (firearm / manufacturer / topic / glossary term) -->
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" id="modalPanel" tabindex="-1">
+    <div class="modal-top">
+      <button class="btn btn-sm" id="modalBack" type="button" hidden>&larr; Back</button>
+      <nav class="crumbs" id="crumbs" aria-label="Breadcrumb"></nav>
+      <button class="icon-btn" id="modalClose" type="button" aria-label="Close details" data-close><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="modal-body" id="modalContent"></div>
+  </div>
+</div>
+
+<!-- Fullscreen image viewer -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="icon-btn" id="lightboxClose" type="button" aria-label="Close image viewer"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div id="lightboxInner"></div>
+</div>
+
+<script>
+/* =====================================================================
+   FIREARMS KNOWLEDGE ARCHIVE  -  JAVASCRIPT
+   All site content comes from the DATABASE section below.
+   To add content you only edit the data arrays - no design changes.
+   ===================================================================== */
+
+// ================================
+// HOW TO ADD IMAGES
+// ================================
+// 1. Create a folder named "images" next to this index.html file.
+// 2. Copy your photos into it, e.g.  images/beretta-92fs-1.jpg
+// 3. In a firearm entry, list the file paths:
+//        images: ["images/beretta-92fs-1.jpg", "images/beretta-92fs-2.jpg"]
+//    The first image is the primary image (used on cards); the rest become gallery thumbnails.
+// 4. Until a file exists, a neat placeholder is shown automatically (no broken-image icons).
+// 5. Shortcut used in the sample data:  images: imgs("beretta-92fs")
+//    expands to ["images/beretta-92fs-1.jpg", "images/beretta-92fs-2.jpg"].
+//    Replace it with an explicit array whenever you like.
+// 6. Variants may have their own picture:  { name:"...", image:"images/beretta-m9.jpg" }
+// 7. The hero background is the CSS variable --hero-image (default images/hero-background.jpg).
+// Only use images you have the right to publish.
+
+// ================================
+// HOW TO ADD YOUTUBE LINKS
+// ================================
+// Each entry has a "videos" array of up to a few links:
+//        videos: [
+//          { title: "Historical Overview", url: "https://www.youtube.com/watch?v=XXXXXXXXXXX" },
+//          { title: "Development History",  url: "https://www.youtube.com/watch?v=YYYYYYYYYYY" }
+//        ]
+// The sample data uses vids("Beretta 92"), which creates two YouTube SEARCH links as placeholders.
+// Replace vids(...) with your own explicit array when you have chosen real videos.
+// Links open in a new tab; nothing is embedded or auto-played.
+
+const UNV = "Information requires verification";
+const imgs = id => ["images/" + id + "-1.jpg", "images/" + id + "-2.jpg"];
+const ytSearch = q => "https://www.youtube.com/results?search_query=" + encodeURIComponent(q);
+const vids = name => [
+  { title: name + " - historical overview", url: ytSearch(name + " history") },
+  { title: name + " - design & development history", url: ytSearch(name + " development history") }
+];
+
+// ================================
+// DATABASE
+// ================================
+
+/* ---- HISTORICAL ERAS (also used for the "historical period" filter) ---- */
+const eras = [
+  { id: "1800s",     label: "1800s",                from: 1800, to: 1899, desc: "Percussion ignition, revolvers, metallic cartridges, smokeless powder and the first machine guns reshape small arms." },
+  { id: "early1900s",label: "Early 1900s",          from: 1900, to: 1913, desc: "Self-loading pistols and standardised bolt-action service rifles dominate military procurement." },
+  { id: "ww1",       label: "World War I period",   from: 1914, to: 1918, desc: "Industrial-scale production, entrenched warfare and the appearance of the first submachine guns." },
+  { id: "interwar",  label: "Interwar period",      from: 1919, to: 1938, desc: "Refinement of wartime designs and the development of self-loading service rifles." },
+  { id: "ww2",       label: "World War II period",  from: 1939, to: 1945, desc: "Mass production, simplified manufacturing methods and the emergence of the assault-rifle concept." },
+  { id: "coldwar",   label: "Cold War",             from: 1946, to: 1991, desc: "NATO and Warsaw Pact standardisation; the AK and AR families; high-capacity service pistols." },
+  { id: "modern",    label: "Modern era",           from: 1992, to: 2100, desc: "Polymer frames, modular platforms, optics integration and continued evolution of long-established designs." }
+];
+
+/* ---- CATEGORIES ----
+   "name" must match the "category" field of firearm entries exactly.
+   Add subcategories by adding strings to the subcategories list. */
+const categories = [
+  { id: "handguns", name: "Handguns", icon: "handguns",
+    description: "Pistols and revolvers from historical and modern manufacturers.",
+    subcategories: ["Pistols", "Semi-Automatic Pistols", "Revolvers", "Historical Handguns", "Other Handguns"] },
+  { id: "smgs", name: "SMGs", full: "Submachine Guns", icon: "smgs",
+    description: "Compact pistol-calibre automatic arms, from the First World War to the modern era.",
+    subcategories: ["World War Era SMGs", "Cold War & Modern SMGs", "Machine Pistols"] },
+  { id: "rifles", name: "Rifles", icon: "rifles",
+    description: "Explore the development and history of military, sporting and precision rifles.",
+    subcategories: ["Assault Rifles", "Battle Rifles", "Bolt-Action Rifles", "Lever-Action Rifles", "Semi-Automatic Rifles", "Historical Military Rifles", "Sporting/Hunting Rifles", "Other Rifle Types"] },
+  { id: "shotguns", name: "Shotguns", icon: "shotguns",
+    description: "Smoothbore shoulder arms for sport, hunting and historical service use.",
+    subcategories: ["Single Barrel", "Double Barrel", "Side-by-Side", "Over & Under", "Pump Action", "Semi-Automatic", "Historical Shotguns", "Hunting Shotguns", "Sporting Shotguns"] },
+  { id: "sniper", name: "Sniper Rifles", full: "Sniper / Precision Rifles", icon: "sniper",
+    description: "The history, development and manufacturers of precision and marksman rifles.",
+    subcategories: ["Bolt-Action Precision Rifles", "Semi-Automatic Marksman Rifles", "Military Sniper Systems", "Other Precision Rifles"] },
+  { id: "machine-guns", name: "Machine Guns", icon: "machine",
+    description: "Historically significant belt-fed and sustained-fire weapons and their development.",
+    subcategories: ["Historical Machine Guns", "Light Machine Guns", "General-Purpose Machine Guns", "Medium Machine Guns", "Heavy Machine Guns"] }
+];
+
+/* ---- MANUFACTURERS ----
+   Required: id, name, country, region.
+   Regions in use: Europe, North America, Middle East & Türkiye, Asia, South America.
+   Uncertain facts are set to UNV ("Information requires verification"). */
+const regionOrder = ["Europe", "North America", "Middle East & Türkiye", "Asia", "South America"];
+const manufacturers = [
+  /* ---------------- EUROPE ---------------- */
+  { id: "beretta", name: "Beretta", country: "Italy", region: "Europe",
+    founded: "1526 (earliest documented sale of barrels, by Bartolomeo Beretta)", founder: "Bartolomeo Beretta (earliest documented ancestor of the firm)", hq: "Gardone Val Trompia, Brescia, Italy",
+    history: "Fabbrica d'Armi Pietro Beretta is among the oldest continuously operating industrial companies in the world, with a lineage of gun-barrel making in the Val Trompia region stretching back to the sixteenth century. Over centuries the family firm moved from barrels to complete firearms, becoming known for sporting shotguns, military pistols and service arms.",
+    productCategories: ["Handguns", "Shotguns", "Rifles"], famousModels: ["Beretta 92 series / M9", "Beretta 686", "Beretta Model 1934"],
+    milestones: [{ year: 1526, text: "Earliest documented Beretta barrel sale, to the Arsenal of Venice." }, { year: 1976, text: "Beretta 92 introduced." }, { year: 1985, text: "Beretta 92 variant selected by the US Armed Forces as the M9." }],
+    website: "https://www.beretta.com" },
+  { id: "glock", name: "Glock", country: "Austria", region: "Europe",
+    founded: "1963", founder: "Gaston Glock", hq: "Deutsch-Wagram, Austria",
+    history: "Glock Ges.m.b.H. began as a supplier of plastic and metal items. It entered the handgun field in the early 1980s when the Austrian armed forces sought a new service pistol, resulting in the Glock 17. The design's polymer frame and striker-fired mechanism influenced pistol design worldwide.",
+    productCategories: ["Handguns"], famousModels: ["Glock 17"],
+    milestones: [{ year: 1963, text: "Company founded by Gaston Glock." }, { year: 1982, text: "Glock 17 adopted by the Austrian armed forces (Pistole 80)." }],
+    website: "https://www.glock.com" },
+  { id: "heckler-koch", name: "Heckler & Koch", country: "Germany", region: "Europe",
+    founded: "1949", founder: "Edmund Heckler, Theodor Koch and Alex Seidel", hq: "Oberndorf am Neckar, Germany",
+    history: "Heckler & Koch was founded in post-war Germany by former engineers of the Mauser works at Oberndorf. The company became known for its roller-delayed blowback designs, including the G3 rifle and the MP5 submachine gun family.",
+    productCategories: ["SMGs", "Rifles", "Handguns"], famousModels: ["MP5", "G3", "HK416"],
+    milestones: [{ year: 1949, text: "Company founded at Oberndorf am Neckar." }, { year: 1966, text: "MP5 enters service with German federal police units." }],
+    website: "https://www.heckler-koch.com" },
+  { id: "mauser", name: "Mauser", country: "Germany", region: "Europe",
+    founded: "c. 1872-1874 (sources differ; " + UNV + ")", founder: "Wilhelm and Paul Mauser", hq: "Oberndorf am Neckar, Germany",
+    history: "Mauser, based at the former royal armoury in Oberndorf am Neckar, produced the bolt-action rifles that became a pattern for military and sporting rifles across the world, from the Model 1871 to the Gewehr 98 and Karabiner 98k. Mauser designs and production licences influenced arms makers on several continents.",
+    productCategories: ["Rifles", "Handguns", "Machine Guns"], famousModels: ["Gewehr 98", "Karabiner 98k", "Mauser C96", "MG 42 (large-scale production)"],
+    milestones: [{ year: 1871, text: "Model 1871 rifle adopted by Prussia." }, { year: 1898, text: "Gewehr 98 adopted by the German Empire." }],
+    website: "https://www.mauser.com", verify: true },
+  { id: "erma", name: "Erma Werke", country: "Germany", region: "Europe",
+    founded: "c. 1922 (" + UNV + ")", founder: UNV, hq: "Erfurt, later Dachau, Germany (" + UNV + ")",
+    history: "Erma (Erfurter Maschinenfabrik) is historically associated with the MP 38 and MP 40 submachine guns, whose design is credited to Heinrich Vollmer. Production of the MP 40 was shared among several manufacturers during the Second World War.",
+    productCategories: ["SMGs"], famousModels: ["MP 38", "MP 40"],
+    milestones: [{ year: 1938, text: "MP 38 introduced." }, { year: 1940, text: "MP 40 introduced." }],
+    website: "", verify: true },
+  { id: "dwm", name: "DWM", country: "Germany", region: "Europe",
+    founded: "1896 (" + UNV + " for exact details)", founder: UNV, hq: "Berlin, Germany",
+    history: "Deutsche Waffen- und Munitionsfabriken (DWM) was a major German arms and ammunition group in the late nineteenth and early twentieth centuries. It manufactured the Parabellum-Pistole (Luger) and other arms and ammunition.",
+    productCategories: ["Handguns", "Machine Guns"], famousModels: ["Luger P08", "MG 08"],
+    milestones: [{ year: 1908, text: "Parabellum-Pistole 08 adopted by the German Army." }],
+    website: "", verify: true },
+  { id: "holland-holland", name: "Holland & Holland", country: "United Kingdom", region: "Europe",
+    founded: "1835", founder: "Harris Holland", hq: "London, United Kingdom",
+    history: "Holland & Holland is a London gunmaker renowned for bespoke sporting shotguns and large-calibre rifles built in the traditional English 'best gun' style. Its Royal side-by-side shotgun is a long-running flagship model.",
+    productCategories: ["Shotguns", "Rifles"], famousModels: ["Royal side-by-side shotgun", "Royal over-and-under shotgun"],
+    milestones: [{ year: 1835, text: "Firm established by Harris Holland." }, { year: 1883, text: "Royal hammerless ejector shotgun introduced." }],
+    website: "https://www.hollandandholland.com", verify: true },
+  { id: "webley-scott", name: "Webley & Scott", country: "United Kingdom", region: "Europe",
+    founded: "1897 (merger); Webley lineage from c. 1790", founder: "Merger of P. Webley & Son and W. & C. Scott & Son", hq: "Birmingham, United Kingdom",
+    history: "Webley & Scott was formed by a merger of two Birmingham arms makers. The Webley name is closely linked to British military revolvers from the Victorian era through the First World War and beyond.",
+    productCategories: ["Handguns", "Shotguns"], famousModels: ["Webley Mk VI", "Webley-Fosbery"],
+    milestones: [{ year: 1887, text: "Webley Mk I revolver adopted by the British Army." }, { year: 1897, text: "Webley & Scott formed." }, { year: 1915, text: "Webley Mk VI adopted." }],
+    website: "https://www.webleyandscott.com", verify: true },
+  { id: "rsaf-enfield", name: "Royal Small Arms Factory", country: "United Kingdom", region: "Europe",
+    founded: "1816 (" + UNV + ")", founder: "British Government (Board of Ordnance)", hq: "Enfield Lock, London, United Kingdom",
+    history: "The Royal Small Arms Factory (RSAF) at Enfield was the British state's principal small-arms factory. It produced and developed service arms including the Lee-Enfield rifle and the Sten gun, and closed in the late twentieth century.",
+    productCategories: ["Rifles", "SMGs"], famousModels: ["Lee-Enfield (SMLE)", "Sten"],
+    milestones: [{ year: 1895, text: "Lee-Enfield rifle introduced." }, { year: 1941, text: "Sten Mk I enters production." }],
+    website: "", verify: true },
+  { id: "accuracy-international", name: "Accuracy International", country: "United Kingdom", region: "Europe",
+    founded: "1978", founder: "Malcolm Cooper (with Dave Walls)", hq: "Portsmouth, United Kingdom",
+    history: "Accuracy International is a British maker of precision bolt-action rifles, founded by Olympic shooting champion Malcolm Cooper. Its designs were adopted by the British Army and many other forces and sporting shooters.",
+    productCategories: ["Sniper Rifles"], famousModels: ["L96A1 / Precision Marksman", "Arctic Warfare (AW)", "AWM", "L115A3"],
+    milestones: [{ year: 1978, text: "Company founded." }, { year: 1985, text: "L96A1 adopted by the British Army." }],
+    website: "https://www.accuracy-international.com", verify: true },
+  { id: "vickers", name: "Vickers", country: "United Kingdom", region: "Europe",
+    founded: "1828 (as a Sheffield steel business)", founder: "Edward Vickers and George Naylor", hq: "Sheffield, later London, United Kingdom",
+    history: "Vickers grew from a Sheffield steel firm into a major British armaments group. After absorbing the Maxim Nordenfelt company in 1897, it developed and produced the Vickers machine gun, a refinement of Hiram Maxim's recoil-operated design that served the British Army for over half a century.",
+    productCategories: ["Machine Guns"], famousModels: ["Vickers machine gun", "Maxim gun (production)"],
+    milestones: [{ year: 1897, text: "Vickers acquires Maxim Nordenfelt." }, { year: 1912, text: "Vickers gun adopted by the British Army." }],
+    website: "", verify: true },
+  { id: "fn-herstal", name: "FN Herstal", country: "Belgium", region: "Europe",
+    founded: "1889", founder: "A consortium of Liege arms makers", hq: "Herstal, Belgium",
+    history: "Fabrique Nationale d'Armes de Guerre was created in 1889 to manufacture Mauser-pattern rifles for the Belgian Army. It became a major international arms company and the long-time production partner of John Browning's designs, later producing the FN FAL, the FN MAG and many other arms.",
+    productCategories: ["Rifles", "Handguns", "Machine Guns", "Shotguns"], famousModels: ["FN FAL", "FN MAG", "Browning Hi-Power", "Browning Auto-5 (production)"],
+    milestones: [{ year: 1889, text: "Company founded in Herstal." }, { year: 1902, text: "FN begins producing the Browning Auto-5 shotgun." }, { year: 1953, text: "FAL adopted by Belgium." }],
+    website: "https://fnherstal.com" },
+  { id: "tula", name: "Tula Arms Plant", country: "Russia", region: "Europe",
+    founded: "1712", founder: "Tsar Peter the Great (by decree)", hq: "Tula, Russia",
+    history: "The Tula arms factory is one of Russia's oldest, established in the early eighteenth century. It produced Mosin-Nagant rifles among many other arms over the Imperial, Soviet and post-Soviet periods.",
+    productCategories: ["Rifles", "Shotguns"], famousModels: ["Mosin-Nagant", "Tula-produced Soviet arms"],
+    milestones: [{ year: 1712, text: "Factory established." }, { year: 1891, text: "Mosin-Nagant M1891 adopted." }],
+    website: "", verify: true },
+  { id: "izhmash", name: "Izhmash / Kalashnikov Concern", country: "Russia", region: "Europe",
+    founded: "1807", founder: "Established by decree of Tsar Alexander I", hq: "Izhevsk, Udmurtia, Russia",
+    history: "The Izhevsk arms plant, later known as Izhmash and Baikal-branded for civilian arms, is the historic home of Kalashnikov rifles. Izhevsk lies in European Russia, west of the Urals. Izhmash became part of the Kalashnikov Concern formed in the 2010s.",
+    productCategories: ["Rifles", "Sniper Rifles", "Shotguns"], famousModels: ["AK-47 / AKM", "AK-74", "Dragunov SVD"],
+    milestones: [{ year: 1807, text: "Izhevsk arms factory established." }, { year: 1949, text: "AK adopted by the Soviet Army." }, { year: 1963, text: "SVD adopted." }],
+    website: "", verify: true },
+  { id: "soviet-factories", name: "Soviet State Factories", country: "Soviet Union", region: "Europe",
+    founded: "1920s-1991 (state arms industry)", founder: "Soviet State", hq: "Multiple factories (" + UNV + ")",
+    history: "Many Soviet small arms, including the PPSh-41 submachine gun, were built in large numbers at several state factories rather than by a single named company. This entry is a placeholder for such multi-factory production.",
+    productCategories: ["SMGs", "Rifles"], famousModels: ["PPSh-41"],
+    milestones: [{ year: 1941, text: "PPSh-41 enters production." }],
+    website: "", verify: true },
+  /* ---------------- NORTH AMERICA ---------------- */
+  { id: "colt", name: "Colt", country: "United States", region: "North America",
+    founded: "1836 (Paterson, New Jersey); Hartford firm from 1855", founder: "Samuel Colt", hq: "West Hartford, Connecticut, United States",
+    history: "Colt's name is bound up with the mass production of the revolver in the nineteenth century. Its Hartford factory pioneered manufacturing methods built on interchangeable parts. In the twentieth century Colt produced the M1911 pistol and later the M16 rifle family. Colt has changed ownership in recent years and is part of the Colt CZ Group.",
+    productCategories: ["Handguns", "Rifles"], famousModels: ["Single Action Army", "M1911", "M16 / AR-15"],
+    milestones: [{ year: 1836, text: "Colt patents the revolving-cylinder firearm and founds the Paterson company." }, { year: 1873, text: "Single Action Army adopted by the US Army." }, { year: 1911, text: "M1911 adopted." }],
+    website: "https://www.colt.com" },
+  { id: "smith-wesson", name: "Smith & Wesson", country: "United States", region: "North America",
+    founded: "1852", founder: "Horace Smith and Daniel B. Wesson", hq: "Springfield, Massachusetts (historic); corporate offices later moved to Tennessee",
+    history: "Smith & Wesson became synonymous with the American revolver, introducing metallic-cartridge revolvers in the 1850s and 1860s and the hand-ejector 'Military & Police' line at the turn of the twentieth century.",
+    productCategories: ["Handguns", "Rifles"], famousModels: ["Model 10 Military & Police", "Model 29", "M&P series"],
+    milestones: [{ year: 1852, text: "Partnership formed by Horace Smith and Daniel B. Wesson." }, { year: 1899, text: "Military & Police revolver introduced." }],
+    website: "https://www.smith-wesson.com", verify: true },
+  { id: "browning", name: "Browning", country: "United States", region: "North America",
+    founded: "1878", founder: "John Moses Browning and Matthew S. Browning", hq: "Morgan, Utah, United States (company origin: Ogden, Utah)",
+    history: "Browning is named for John Moses Browning, one of the most prolific firearms designers in history. His designs were produced by Winchester, Colt, Remington and FN Herstal as well as under his own name. The Browning brand has been owned by FN Herstal since the late 1970s, so many Browning-designed arms have a Belgian production history.",
+    productCategories: ["Handguns", "Shotguns", "Machine Guns", "Rifles"], famousModels: ["Auto-5", "M2 machine gun", "Hi-Power", "M1911 (design)"],
+    milestones: [{ year: 1878, text: "Browning Brothers firm founded in Ogden, Utah." }, { year: 1900, text: "Auto-5 patent." }, { year: 1933, text: "M2 machine gun adopted by the US Army." }],
+    website: "https://www.browning.com", verify: true },
+  { id: "remington", name: "Remington", country: "United States", region: "North America",
+    founded: "1816", founder: "Eliphalet Remington II", hq: "Ilion, New York (historic); " + UNV + " (current)",
+    history: "Remington Arms is among the oldest American firearm makers. It produced military rifles, sporting rifles and shotguns including the Model 870 pump-action and Model 700 bolt-action rifle. Corporate ownership has changed repeatedly in recent years.",
+    productCategories: ["Shotguns", "Rifles", "Sniper Rifles"], famousModels: ["Model 870", "Model 700"],
+    milestones: [{ year: 1816, text: "Company founded in Ilion, New York." }, { year: 1950, text: "Model 870 introduced." }, { year: 1962, text: "Model 700 introduced." }],
+    website: "https://www.remington.com", verify: true },
+  { id: "winchester", name: "Winchester", country: "United States", region: "North America",
+    founded: "1866", founder: "Oliver Winchester", hq: "New Haven, Connecticut (historic); " + UNV + " (current)",
+    history: "Winchester Repeating Arms is closely associated with the lever-action rifle of the American frontier and with pump-action shotguns. The brand's ownership and production arrangements have changed over time.",
+    productCategories: ["Rifles", "Shotguns"], famousModels: ["Model 1873", "Model 1894", "Model 1897", "Model 70"],
+    milestones: [{ year: 1866, text: "Winchester Repeating Arms Company established." }, { year: 1894, text: "Model 1894 introduced." }, { year: 1897, text: "Model 1897 pump shotgun introduced." }],
+    website: "https://www.winchesterguns.com", verify: true },
+  { id: "auto-ordnance", name: "Auto-Ordnance", country: "United States", region: "North America",
+    founded: "1916", founder: "John T. Thompson", hq: UNV,
+    history: "Auto-Ordnance Corporation was formed to develop and market the Thompson submachine gun. Early production was contracted to Colt, and the design entered large-scale military production in the Second World War.",
+    productCategories: ["SMGs"], famousModels: ["Thompson M1921", "M1928A1", "M1 / M1A1"],
+    milestones: [{ year: 1921, text: "Model of 1921 Thompson produced." }, { year: 1938, text: "Thompson adopted by the US Army." }],
+    website: "", verify: true },
+  { id: "springfield-armory", name: "Springfield Armory", country: "United States", region: "North America",
+    founded: "1777", founder: "US Continental Army (by direction of George Washington)", hq: "Springfield, Massachusetts, United States",
+    history: "Springfield Armory was the principal national armoury of the United States for nearly two centuries. It was the home of John Garand's M1 rifle development and closed in 1968; the site is now a National Historic Site.",
+    productCategories: ["Rifles"], famousModels: ["M1 Garand", "M1903 Springfield"],
+    milestones: [{ year: 1777, text: "Armory established." }, { year: 1936, text: "M1 Garand adopted." }, { year: 1968, text: "Armory closed." }],
+    website: "", verify: true },
+  { id: "saco-defense", name: "Saco Defense", country: "United States", region: "North America",
+    founded: UNV, founder: UNV, hq: "Saco, Maine, United States (" + UNV + ")",
+    history: "Saco Defense (with its predecessor Maremont) is historically associated with production of the M60 machine gun for the US military.",
+    productCategories: ["Machine Guns"], famousModels: ["M60"],
+    milestones: [{ year: 1957, text: "M60 adopted by the US Army." }],
+    website: "", verify: true },
+  /* ---------------- MIDDLE EAST & TÜRKIYE ---------------- */
+  { id: "iwi", name: "IWI / IMI", country: "Israel", region: "Middle East & Türkiye",
+    founded: "IMI lineage from 1933; IWI created c. 2005 (" + UNV + ")", founder: UNV, hq: "Ramat HaSharon, Israel",
+    history: "Israel Military Industries (IMI) developed the Uzi submachine gun. IMI's small-arms business later became Israel Weapon Industries (IWI), which continues to produce the Uzi lineage and other designs.",
+    productCategories: ["SMGs", "Rifles", "Handguns"], famousModels: ["Uzi", "Galil", "Tavor"],
+    milestones: [{ year: 1954, text: "Uzi adopted by the Israel Defense Forces." }],
+    website: "https://www.iwi.net", verify: true },
+  { id: "hatsan", name: "Hatsan", country: "Türkiye", region: "Middle East & Türkiye",
+    founded: UNV, founder: UNV, hq: "Izmir, Türkiye (" + UNV + ")",
+    history: "Hatsan is a Turkish manufacturer known principally for shotguns and air rifles. " + UNV + " for further history.",
+    productCategories: ["Shotguns"], famousModels: [UNV],
+    milestones: [], website: "https://www.hatsan.com.tr", verify: true },
+  { id: "tisas", name: "TİSAŞ", country: "Türkiye", region: "Middle East & Türkiye",
+    founded: UNV, founder: UNV, hq: UNV,
+    history: "TİSAŞ is a Turkish firearms manufacturer. " + UNV + ": founding date, location and product history should be confirmed against a reliable source before being published.",
+    productCategories: ["Handguns"], famousModels: [UNV], milestones: [], website: "", verify: true },
+  { id: "kral-arms", name: "Kral Arms", country: "Türkiye", region: "Middle East & Türkiye",
+    founded: UNV, founder: UNV, hq: UNV,
+    history: "Kral Arms is a Turkish firearms manufacturer. " + UNV + ".",
+    productCategories: ["Shotguns"], famousModels: [UNV], milestones: [], website: "", verify: true },
+  { id: "ata-arms", name: "ATA Arms", country: "Türkiye", region: "Middle East & Türkiye",
+    founded: UNV, founder: UNV, hq: UNV,
+    history: "ATA Arms is a Turkish firearms manufacturer. " + UNV + ".",
+    productCategories: ["Shotguns"], famousModels: [UNV], milestones: [], website: "", verify: true },
+  { id: "akus", name: "AKUS", country: "Türkiye", region: "Middle East & Türkiye",
+    founded: UNV, founder: UNV, hq: UNV,
+    history: "AKUS is a Turkish firearms manufacturer. " + UNV + ".",
+    productCategories: ["Shotguns"], famousModels: [UNV], milestones: [], website: "", verify: true },
+  /* ---------------- ASIA ---------------- */
+  { id: "norinco", name: "Norinco", country: "China", region: "Asia",
+    founded: "1980", founder: "Government of the People's Republic of China", hq: "Beijing, China",
+    history: "Norinco (China North Industries Group) is a Chinese state-owned defence and industrial group whose products include small arms. Its historical products include Chinese licensed or derived versions of Soviet-pattern arms.",
+    productCategories: ["Rifles", "Handguns"], famousModels: ["Type 56 rifle", "Type 54 pistol"],
+    milestones: [{ year: 1980, text: "Organisation established." }],
+    website: "", verify: true },
+  /* ---------------- SOUTH AMERICA ---------------- */
+  { id: "taurus", name: "Taurus", country: "Brazil", region: "South America",
+    founded: "1939 (" + UNV + ")", founder: UNV, hq: "Sao Leopoldo, Rio Grande do Sul, Brazil (" + UNV + ")",
+    history: "Forjas Taurus is Brazil's best-known firearms manufacturer, producing revolvers and pistols for civilian, police and export markets. " + UNV + " for detailed corporate history.",
+    productCategories: ["Handguns"], famousModels: [UNV], milestones: [],
+    website: "https://www.taurusarmas.com.br", verify: true }
+];
+
+/* ---- FIREARM ENTRIES ----
+   To add a firearm, copy any object below and edit it.
+   Required: id (unique, lowercase-with-dashes), name, category, subcategory, manufacturer, country, year.
+   - "category" must match a category name above; "subcategory" one of its subcategories.
+   - "alsoIn" optionally lists extra subcategories the entry appears in.
+   - "manufacturer" should match a manufacturer name above to enable the profile link.
+   - "actionType" is the short value used by the Action filter.
+   - Unknown facts: use UNV ("Information requires verification") rather than guessing. */
+const firearms = [
+  /* ======================= HANDGUNS ======================= */
+  { id: "beretta-92fs", name: "Beretta 92FS", category: "Handguns", subcategory: "Pistols", alsoIn: ["Semi-Automatic Pistols"],
+    manufacturer: "Beretta", country: "Italy", year: 1976, production: "1976 - present (series)", status: "In production (92 series)", actionType: "Semi-automatic", featured: true,
+    description: "An Italian double-action/single-action pistol family, chambered in 9x19mm, adopted by many police and military forces and by the US Armed Forces as the M9.",
+    history: "The Beretta 92 series was introduced in 1976 and developed through several revisions, including the 92S, 92SB and 92F. A version of the 92 was selected by the US Armed Forces in 1985 to replace the M1911A1 as the standard sidearm, receiving the designation M9. The 92FS became one of the most recognised service pistols of the late twentieth century.",
+    mechanism: "Short-recoil operated, locked breech using a pivoting locking block, with an open-slide design. Double-action/single-action trigger terminology applies. The slide-mounted lever functions as a safety and decocker in many variants.",
+    specifications: { action: "Semi-automatic; double-action/single-action", calibre: "9x19mm Parabellum", length: "approx. 217 mm", barrelLength: "approx. 125 mm", weight: "approx. 950-980 g (unloaded)", capacity: "15 rounds (standard magazine; other capacities exist)" },
+    images: imgs("beretta-92fs"),
+    variants: [
+      { name: "Beretta 92", period: "c. 1976", notes: "First model of the series." },
+      { name: "Beretta 92S", period: "c. late 1970s", notes: "Early revision of the original design; details differ between sources." },
+      { name: "Beretta 92SB", period: "c. early 1980s", notes: "Further revision; features differ between production batches." },
+      { name: "Beretta 92F", period: "c. mid-1980s", notes: "Refined version associated with the US XM9 programme." },
+      { name: "Beretta 92FS", period: "c. late 1980s onward", notes: "Widely produced revision of the 92F." },
+      { name: "Beretta M9", period: "1985", notes: "Designation of the Beretta 92 variant adopted by the US Armed Forces." },
+      { name: "Beretta 92X", period: "c. 2010s", notes: "Modern evolution of the 92 platform." }
+    ],
+    videos: vids("Beretta 92"), related: ["m1911", "glock-17", "luger-p08"], tags: ["M9", "9mm", "Italian pistol"],
+    verifyNote: "Variant introduction dates marked 'c.' are approximate and differ between sources." },
+
+  { id: "m1911", name: "Colt M1911", category: "Handguns", subcategory: "Pistols", alsoIn: ["Semi-Automatic Pistols", "Historical Handguns"],
+    manufacturer: "Colt", country: "United States", year: 1911, production: "1911 - 1945 (military); later commercial variants", status: "Historical service pistol; many descendants",
+    actionType: "Semi-automatic", featured: true,
+    description: "John Browning's .45 ACP single-action pistol, the United States' standard military sidearm from 1911 into the 1980s.",
+    history: "The M1911 was adopted by the US Army in 1911 following trials earlier that decade. It was designed by John M. Browning and built by Colt and, during the world wars, by other contractors. An updated M1911A1 followed in the mid-1920s. The pistol remained the US military's standard sidearm until the Beretta M9 replaced it in the 1980s, and its design has been widely copied and adapted.",
+    mechanism: "Short-recoil operated with a tilting-barrel locked breech. Single-action trigger terminology; a grip safety and manual safety are part of the original configuration.",
+    specifications: { action: "Semi-automatic; single-action", calibre: ".45 ACP", length: "approx. 216 mm", barrelLength: "approx. 127 mm (5 in)", weight: "approx. 1.1 kg (unloaded)", capacity: "7 rounds (original magazine)" },
+    images: imgs("m1911"),
+    variants: [
+      { name: "M1911", period: "1911", notes: "Original US Army service pistol." },
+      { name: "M1911A1", period: "mid-1920s", notes: "Updated model with revised grip-area and sight features." },
+      { name: "Commercial and later variants", period: "1920s - present", notes: "Numerous manufacturers have produced M1911-pattern pistols." }
+    ],
+    videos: vids("Colt M1911"), related: ["beretta-92fs", "luger-p08"], tags: ["Browning", ".45 ACP"] },
+
+  { id: "glock-17", name: "Glock 17", category: "Handguns", subcategory: "Pistols", alsoIn: ["Semi-Automatic Pistols"],
+    manufacturer: "Glock", country: "Austria", year: 1982, production: "1982 - present", status: "In production",
+    actionType: "Semi-automatic", featured: true,
+    description: "An Austrian polymer-framed, striker-fired 9x19mm pistol that influenced modern service-pistol design.",
+    history: "Gaston Glock's company entered pistol production in response to an Austrian armed forces requirement. The resulting Glock 17 was adopted in 1982 as the Pistole 80. Its extensive use of polymer and its simple construction were distinctive for the time. The design has since evolved through several generations.",
+    mechanism: "Short-recoil operated, locked breech, striker-fired. Glock describes its trigger arrangement as 'Safe Action'.",
+    specifications: { action: "Semi-automatic; striker-fired", calibre: "9x19mm Parabellum", length: "approx. 186 mm", barrelLength: "approx. 114 mm", weight: "approx. 625 g (unloaded)", capacity: "17 rounds (standard magazine; other capacities exist)" },
+    images: imgs("glock-17"),
+    variants: [
+      { name: "Glock 17 (first generation)", period: "1982", notes: "Original model." },
+      { name: "Glock 17 Gen 2", period: "c. 1988", notes: "Revised generation." },
+      { name: "Glock 17 Gen 3", period: "c. 1998", notes: "Revised generation." },
+      { name: "Glock 17 Gen 4", period: "c. 2010", notes: "Revised generation." },
+      { name: "Glock 17 Gen 5", period: "c. 2017", notes: "Revised generation." }
+    ],
+    videos: vids("Glock 17"), related: ["beretta-92fs"], tags: ["polymer pistol", "Pistole 80"],
+    verifyNote: "Generation dates marked 'c.' are approximate." },
+
+  { id: "smith-wesson-model-10", name: "Smith & Wesson Model 10", category: "Handguns", subcategory: "Revolvers",
+    manufacturer: "Smith & Wesson", country: "United States", year: 1899, production: "1899 - present (variants)", status: "Long-running production; widely used historically",
+    actionType: "Double-action revolver",
+    description: "A six-shot .38 Special double-action revolver that descends from the Military & Police line introduced in 1899.",
+    history: "The Military & Police revolver was introduced in 1899 and later became known as the Model 10 when Smith & Wesson adopted numeric model designations in 1957. It became one of the most widely produced revolvers in history and was used by police forces and militaries worldwide.",
+    mechanism: "Double-action revolver with a swing-out cylinder, a solid frame and a manual cylinder release, using a rotating cylinder with six chambers.",
+    specifications: { action: "Double-action revolver; swing-out cylinder", calibre: ".38 Special", length: "varies by barrel length", barrelLength: "varies by variant (e.g. 2 in to 6 in)", weight: "varies by barrel length", capacity: "6 rounds" },
+    images: imgs("smith-wesson-model-10"),
+    variants: [
+      { name: "Military & Police (.38 Hand Ejector)", period: "1899", notes: "Original designation." },
+      { name: "Model 10", period: "1957", notes: "Numeric designation adopted." },
+      { name: "Model 64 (stainless)", period: "c. 1970", notes: "Stainless-steel version of the Model 10 pattern." }
+    ],
+    videos: vids("Smith & Wesson Model 10"), related: ["webley-mk-vi", "colt-single-action-army"], tags: ["M&P", ".38 Special", "revolver"] },
+
+  { id: "webley-mk-vi", name: "Webley Mk VI", category: "Handguns", subcategory: "Revolvers", alsoIn: ["Historical Handguns"],
+    manufacturer: "Webley & Scott", country: "United Kingdom", year: 1915, production: "1915 - 1920s", status: "Historical",
+    actionType: "Double-action revolver",
+    description: "A British break-top .455 revolver that was a standard sidearm in the First World War.",
+    history: "The Webley Mk VI was adopted by the British military in 1915 as the culmination of a line of Webley service revolvers dating to the Mk I of 1887. It was used by British and Commonwealth forces in the First World War and into the interwar years. Later British service revolvers shifted to .38 calibre.",
+    mechanism: "Double-action revolver with a break-top frame and a star ejector that lifts spent cases when the revolver is opened.",
+    specifications: { action: "Double-action revolver; top-break", calibre: ".455 Webley", length: "approx. 286 mm", barrelLength: "approx. 152 mm (6 in)", weight: "approx. 1.09 kg", capacity: "6 rounds" },
+    images: imgs("webley-mk-vi"),
+    variants: [
+      { name: "Webley Mk I", period: "1887", notes: "First in the line of British service Webleys." },
+      { name: "Webley Mk VI", period: "1915", notes: "Final .455 service model." }
+    ],
+    videos: vids("Webley Mk VI revolver"), related: ["smith-wesson-model-10", "colt-single-action-army"], tags: ["British service revolver", ".455"] },
+
+  { id: "colt-single-action-army", name: "Colt Single Action Army", category: "Handguns", subcategory: "Revolvers", alsoIn: ["Historical Handguns"],
+    manufacturer: "Colt", country: "United States", year: 1873, production: "1873 - c. 1941 (first generation); resumed later", status: "Historical; still produced in modern form",
+    actionType: "Single-action revolver", featured: true,
+    description: "The classic American single-action revolver of the nineteenth century, adopted by the US Army in 1873.",
+    history: "Introduced in 1873, the Single Action Army (often called the 'Peacemaker') was adopted by the US Army the same year. It became an icon of the American West. First-generation production ran into the 1940s, and it has since returned to production.",
+    mechanism: "Single-action revolver: the hammer must be cocked to rotate the cylinder and release the trigger. Loading and unloading is via a side loading gate.",
+    specifications: { action: "Single-action revolver; loading gate", calibre: ".45 Colt (original); other calibres produced", length: "varies by barrel length", barrelLength: "commonly 4 3/4, 5 1/2 and 7 1/2 in", weight: "approx. 1 kg (varies)", capacity: "6 rounds" },
+    images: imgs("colt-single-action-army"),
+    variants: [
+      { name: "Cavalry model", period: "1873", notes: "Original US Army contract configuration." },
+      { name: "Artillery and Civilian models", period: "1870s", notes: "Shorter-barrel and commercial versions." },
+      { name: "Second generation onward", period: "postwar", notes: "Production resumed after the Second World War." }
+    ],
+    videos: vids("Colt Single Action Army"), related: ["smith-wesson-model-10", "webley-mk-vi"], tags: ["Peacemaker", ".45 Colt", "Old West"] },
+
+  { id: "luger-p08", name: "Luger P08", category: "Handguns", subcategory: "Historical Handguns", alsoIn: ["Semi-Automatic Pistols"],
+    manufacturer: "DWM", country: "Germany", year: 1908, production: "1908 - 1945 (military)", status: "Historical",
+    actionType: "Semi-automatic",
+    description: "The Parabellum-Pistole 08, a toggle-lock 9x19mm pistol that served the German military in both world wars.",
+    history: "Georg Luger refined Hugo Borchardt's earlier toggle-lock pistol design. The Swiss adopted a Luger in 1900, the German Navy followed in 1904 and the German Army adopted the P08 in 1908. The 9x19mm Parabellum cartridge was developed for this pistol line. It served through the First World War and into the Second World War.",
+    mechanism: "Recoil operated with a knee-joint toggle locking mechanism that breaks upward during cycling.",
+    specifications: { action: "Semi-automatic; toggle-lock", calibre: "9x19mm Parabellum", length: "approx. 222 mm", barrelLength: "approx. 98 mm", weight: "approx. 870 g", capacity: "8 rounds" },
+    images: imgs("luger-p08"),
+    variants: [
+      { name: "Swiss Model 1900", period: "1900", notes: "Early Swiss service version." },
+      { name: "P04 (Navy)", period: "1904", notes: "German Navy model." },
+      { name: "P08", period: "1908", notes: "German Army service model." },
+      { name: "Lange Pistole 08 (Artillery)", period: "1913", notes: "Long-barrel artillery model." }
+    ],
+    videos: vids("Luger P08"), related: ["m1911", "beretta-92fs"], tags: ["Parabellum", "toggle-lock"] },
+
+  /* ======================= SMGs ======================= */
+  { id: "mp40", name: "MP 40", category: "SMGs", subcategory: "World War Era SMGs",
+    manufacturer: "Erma Werke", country: "Germany", year: 1940, production: "1940 - 1945", status: "Historical",
+    actionType: "Fully automatic", featured: true,
+    description: "A German 9x19mm submachine gun of the Second World War, noted for its stamped-steel and plastic construction.",
+    history: "The MP 40 evolved from the MP 38, which entered service in 1938. Its design is credited to Heinrich Vollmer and is often misattributed to Hugo Schmeisser. It was produced by several manufacturers during the war. Its use of stamped parts illustrates the shift toward simpler mass-production methods.",
+    mechanism: "Blowback operated from an open bolt, fed from a detachable box magazine.",
+    specifications: { action: "Blowback; open bolt", calibre: "9x19mm Parabellum", length: "approx. 833 mm (stock extended); 630 mm (stock folded)", barrelLength: "approx. 251 mm", weight: "approx. 4.0 kg (unloaded)", capacity: "32 rounds" },
+    images: imgs("mp40"),
+    variants: [
+      { name: "MP 38", period: "1938", notes: "Predecessor with a machined receiver." },
+      { name: "MP 40", period: "1940", notes: "Simplified production version." }
+    ],
+    videos: vids("MP 40 submachine gun"), related: ["sten", "thompson-m1a1", "ppsh-41"], tags: ["German WWII", "Vollmer"] },
+
+  { id: "thompson-m1a1", name: "Thompson Submachine Gun", category: "SMGs", subcategory: "World War Era SMGs",
+    manufacturer: "Auto-Ordnance", country: "United States", year: 1921, production: "1921 - 1945 (main wartime production)", status: "Historical",
+    actionType: "Selective fire", featured: true,
+    description: "The American .45 ACP submachine gun designed by John T. Thompson, produced from the 1920s and in large numbers in the Second World War.",
+    history: "General John T. Thompson founded Auto-Ordnance to develop an automatic hand-held weapon. The first production model was the 1921 model. The design was adopted by the US Navy and Marine Corps in 1928 and by the US Army in 1938. Simplified M1 and M1A1 models were introduced in 1942 for wartime production.",
+    mechanism: "Delayed-blowback in early models and straight blowback in the simplified M1 and M1A1, fed from box or drum magazines.",
+    specifications: { action: "Blowback (varies by model)", calibre: ".45 ACP", length: "varies by model (approx. 813 mm for the M1A1)", barrelLength: "approx. 267 mm (M1A1)", weight: "approx. 4.5-4.9 kg (varies by model)", capacity: "20 or 30 rounds (box); drum magazines also produced" },
+    images: imgs("thompson-m1a1"),
+    variants: [
+      { name: "Thompson Model of 1921", period: "1921", notes: "First production model." },
+      { name: "M1928A1", period: "1928-1938", notes: "US Navy (1928) and US Army (1938) service version." },
+      { name: "M1 / M1A1", period: "1942", notes: "Simplified wartime models." }
+    ],
+    videos: vids("Thompson submachine gun"), related: ["mp40", "sten", "m1911"], tags: [".45 ACP", "Auto-Ordnance"] },
+
+  { id: "uzi", name: "Uzi", category: "SMGs", subcategory: "Cold War & Modern SMGs",
+    manufacturer: "IWI / IMI", country: "Israel", year: 1954, production: "1950s - present", status: "Production ended in some forms; derivatives continue",
+    actionType: "Selective fire",
+    description: "An Israeli 9x19mm submachine gun designed by Uziel Gal, noted for its telescoping bolt.",
+    history: "Uziel Gal designed the Uzi in the late 1940s and early 1950s. It was adopted by the Israel Defense Forces in 1954 and subsequently exported widely. Its compact layout was achieved by wrapping the bolt around the barrel.",
+    mechanism: "Blowback operated from an open bolt, with a telescoping bolt and a magazine inserted through the pistol grip.",
+    specifications: { action: "Blowback; open bolt; telescoping bolt", calibre: "9x19mm Parabellum", length: "approx. 650 mm (stock extended); 470 mm (stock folded)", barrelLength: "approx. 260 mm", weight: "approx. 3.5 kg (unloaded)", capacity: "25 or 32 rounds" },
+    images: imgs("uzi"),
+    variants: [
+      { name: "Uzi", period: "1954", notes: "Original full-size model." },
+      { name: "Mini Uzi", period: "c. 1980", notes: "Compact derivative." },
+      { name: "Micro Uzi", period: "c. 1983", notes: "Smaller derivative." }
+    ],
+    videos: vids("Uzi submachine gun"), related: ["mp5", "mp40"], tags: ["Uziel Gal", "IMI"],
+    verifyNote: "Mini and Micro Uzi dates are approximate." },
+
+  { id: "mp5", name: "Heckler & Koch MP5", category: "SMGs", subcategory: "Cold War & Modern SMGs",
+    manufacturer: "Heckler & Koch", country: "Germany", year: 1966, production: "1966 - present", status: "In production",
+    actionType: "Selective fire", featured: true,
+    description: "A German 9x19mm submachine gun family using a roller-delayed blowback system and a closed bolt.",
+    history: "Development began in the early 1960s as the HK54. The MP5 entered German police and border-guard service in 1966 and later became one of the most widely used submachine guns in the world. It descends from the design principles of H&K's G3 rifle.",
+    mechanism: "Roller-delayed blowback operating from a closed bolt, fed from a detachable box magazine.",
+    specifications: { action: "Roller-delayed blowback; closed bolt", calibre: "9x19mm Parabellum", length: "approx. 680 mm (fixed-stock version)", barrelLength: "approx. 225 mm", weight: "approx. 2.5 kg (unloaded)", capacity: "15 or 30 rounds" },
+    images: imgs("mp5"),
+    variants: [
+      { name: "MP5A2 / MP5A3", period: "1960s onward", notes: "Fixed-stock and retractable-stock versions." },
+      { name: "MP5K", period: "1970s", notes: "Compact variant." }
+    ],
+    videos: vids("Heckler & Koch MP5"), related: ["uzi", "mp40"], tags: ["H&K", "roller-delayed"] },
+
+  { id: "ppsh-41", name: "PPSh-41", category: "SMGs", subcategory: "World War Era SMGs",
+    manufacturer: "Soviet State Factories", country: "Soviet Union", year: 1941, production: "1941 - 1950s", status: "Historical",
+    actionType: "Selective fire",
+    description: "A Soviet submachine gun designed by Georgy Shpagin, built in very large numbers during the Second World War.",
+    history: "Georgy Shpagin's PPSh-41 was designed to be simple to manufacture using stamped parts. It saw wide use by Soviet forces during the war and by many other countries afterward. China produced a derivative as the Type 50.",
+    mechanism: "Blowback operated from an open bolt, fed from a drum or box magazine.",
+    specifications: { action: "Blowback; open bolt", calibre: "7.62x25mm Tokarev", length: "approx. 843 mm", barrelLength: "approx. 269 mm", weight: "approx. 3.6 kg (unloaded)", capacity: "71-round drum or 35-round box" },
+    images: imgs("ppsh-41"),
+    variants: [
+      { name: "PPSh-41", period: "1941", notes: "Original model." },
+      { name: "Type 50 (China)", period: "1950s", notes: "Chinese derivative." }
+    ],
+    videos: vids("PPSh-41"), related: ["mp40", "sten"], tags: ["Shpagin", "Soviet"] },
+
+  { id: "sten", name: "Sten", category: "SMGs", subcategory: "World War Era SMGs",
+    manufacturer: "Royal Small Arms Factory", country: "United Kingdom", year: 1941, production: "1941 - 1945", status: "Historical",
+    actionType: "Selective fire",
+    description: "A British 9x19mm submachine gun designed for rapid, low-cost production in wartime.",
+    history: "The Sten was designed by Major Reginald Shepherd and Harold Turpin at the Royal Small Arms Factory, Enfield; the name combines their initials with 'EN' for Enfield. It was produced in very large numbers from 1941 and supplied to resistance movements as well as regular forces.",
+    mechanism: "Blowback operated from an open bolt, using a simple tubular receiver and a side-mounted box magazine.",
+    specifications: { action: "Blowback; open bolt", calibre: "9x19mm Parabellum", length: "approx. 760 mm (Mk II)", barrelLength: "approx. 196 mm", weight: "approx. 3.0 kg (Mk II, unloaded)", capacity: "32 rounds" },
+    images: imgs("sten"),
+    variants: [
+      { name: "Sten Mk I", period: "1941", notes: "Initial production model." },
+      { name: "Sten Mk II", period: "1942", notes: "Simplified, most numerous version." },
+      { name: "Sten Mk III", period: "1943", notes: "Further simplified version." },
+      { name: "Sten Mk V", period: "1944", notes: "Version with wooden furniture." }
+    ],
+    videos: vids("Sten gun"), related: ["mp40", "ppsh-41", "thompson-m1a1"], tags: ["Shepherd", "Turpin"] },
+
+  /* ======================= RIFLES ======================= */
+  { id: "ak-47", name: "AK-47 / Kalashnikov Family", category: "Rifles", subcategory: "Assault Rifles",
+    manufacturer: "Izhmash / Kalashnikov Concern", country: "Soviet Union", year: 1949, production: "1949 - present (family)", status: "In production in many national variants",
+    actionType: "Selective fire", featured: true,
+    description: "A Soviet gas-operated rifle designed by Mikhail Kalashnikov and the progenitor of one of the most widely produced rifle families in history.",
+    history: "Mikhail Kalashnikov developed the design in the late 1940s; the Soviet Army adopted it in 1949. The AKM, a lighter stamped-receiver version, followed in 1959, and the AK-74 in 5.45x39mm in 1974. Licensed and unlicensed copies have been produced in many countries.",
+    mechanism: "Long-stroke gas piston operating a rotating bolt, fed from a detachable box magazine.",
+    specifications: { action: "Gas-operated; rotating bolt", calibre: "7.62x39mm (AK-47/AKM); 5.45x39mm (AK-74)", length: "approx. 880 mm (AK-47)", barrelLength: "approx. 415 mm", weight: "approx. 4.3 kg (unloaded)", capacity: "30 rounds" },
+    images: imgs("ak-47"),
+    variants: [
+      { name: "AK-47", period: "1949", notes: "Original service rifle." },
+      { name: "Type 56 (China)", period: "1956", notes: "Chinese derivative." },
+      { name: "AKM", period: "1959", notes: "Modernised stamped-receiver version." },
+      { name: "AK-74", period: "1974", notes: "Small-calibre version." },
+      { name: "AKS-74U", period: "1979", notes: "Compact carbine." },
+      { name: "AK-12", period: "c. 2018", notes: "Modern evolution adopted by Russian forces." }
+    ],
+    videos: vids("Kalashnikov AK-47"), related: ["m16-ar-15", "fn-fal", "svd-dragunov"], tags: ["Kalashnikov", "AKM", "AK-74"] },
+
+  { id: "m16-ar-15", name: "AR-15 / M16 Family", category: "Rifles", subcategory: "Assault Rifles", alsoIn: ["Semi-Automatic Rifles"],
+    manufacturer: "Colt", country: "United States", year: 1964, production: "1960s - present (family)", status: "In production in many variants",
+    actionType: "Selective fire", featured: true,
+    description: "A lightweight 5.56x45mm rifle family developed from Eugene Stoner's ArmaLite designs, adopted by the United States in the 1960s.",
+    history: "The AR-15 was developed by Eugene Stoner at ArmaLite in the late 1950s. Colt acquired the rights and promoted the rifle to military customers. The US adopted it as the M16 in the 1960s, with the M16A1 following in 1967. Semi-automatic civilian versions have been sold as the AR-15 since the 1960s.",
+    mechanism: "Gas-operated with a rotating bolt, fed from a detachable box magazine.",
+    specifications: { action: "Gas-operated; rotating bolt", calibre: "5.56x45mm NATO (.223 Remington in some civilian versions)", length: "approx. 986 mm (M16A1)", barrelLength: "approx. 508 mm", weight: "approx. 2.9 kg (M16A1, unloaded)", capacity: "20 or 30 rounds" },
+    images: imgs("m16-ar-15"),
+    variants: [
+      { name: "ArmaLite AR-15 (prototype series)", period: "late 1950s", notes: "Original design." },
+      { name: "XM16E1", period: "c. 1964", notes: "Early US military version." },
+      { name: "M16A1", period: "1967", notes: "Improved US Army version." },
+      { name: "M16A2", period: "early 1980s", notes: "Revised service rifle." },
+      { name: "M4 carbine", period: "1990s", notes: "Shortened derivative." }
+    ],
+    videos: vids("AR-15 M16 history"), related: ["ak-47", "fn-fal", "m1-garand"], tags: ["Stoner", "5.56mm"] },
+
+  { id: "m1-garand", name: "M1 Garand", category: "Rifles", subcategory: "Semi-Automatic Rifles", alsoIn: ["Historical Military Rifles"],
+    manufacturer: "Springfield Armory", country: "United States", year: 1936, production: "1936 - 1950s", status: "Historical",
+    actionType: "Semi-automatic", featured: true,
+    description: "John Garand's .30-06 rifle, the first semi-automatic rifle adopted as a standard-issue infantry weapon by a major power.",
+    history: "Designed by John Garand at Springfield Armory, the M1 was adopted by the US Army in 1936 and used extensively in the Second World War and the Korean War. Winchester also produced it. It was replaced by the M14 in the late 1950s.",
+    mechanism: "Gas-operated rotating bolt, fed by an eight-round en-bloc clip.",
+    specifications: { action: "Gas-operated; rotating bolt", calibre: ".30-06 Springfield", length: "approx. 1,107 mm", barrelLength: "approx. 610 mm", weight: "approx. 4.3 kg (unloaded)", capacity: "8 rounds (en-bloc clip)" },
+    images: imgs("m1-garand"),
+    variants: [
+      { name: "M1 Garand", period: "1936", notes: "Standard service rifle." },
+      { name: "M1C / M1D", period: "1940s", notes: "Marksman variants." }
+    ],
+    videos: vids("M1 Garand"), related: ["lee-enfield-smle", "m16-ar-15", "mosin-nagant"], tags: ["Garand", ".30-06"] },
+
+  { id: "lee-enfield-smle", name: "Lee-Enfield (SMLE)", category: "Rifles", subcategory: "Bolt-Action Rifles", alsoIn: ["Historical Military Rifles"],
+    manufacturer: "Royal Small Arms Factory", country: "United Kingdom", year: 1895, production: "1895 - 1950s", status: "Historical",
+    actionType: "Bolt action",
+    description: "The British bolt-action service rifle line, chambered in .303 British, in use through two world wars.",
+    history: "The Lee-Enfield combined James Paris Lee's rear-locking bolt and magazine design with Enfield rifling. The Short Magazine Lee-Enfield (SMLE) followed in 1903, with the Mk III in 1907. The No. 4 Mk I, adopted in 1939 and in wide production from 1941, was the Second World War service rifle.",
+    mechanism: "Manually operated rotating-bolt action, fed from a detachable ten-round box magazine.",
+    specifications: { action: "Bolt action; rear-locking lugs", calibre: ".303 British", length: "approx. 1,132 mm (SMLE Mk III)", barrelLength: "approx. 640 mm", weight: "approx. 3.9 kg", capacity: "10 rounds" },
+    images: imgs("lee-enfield-smle"),
+    variants: [
+      { name: "Lee-Enfield Mk I", period: "1895", notes: "First long Lee-Enfield." },
+      { name: "SMLE Mk I", period: "1903", notes: "Shortened rifle." },
+      { name: "SMLE Mk III", period: "1907", notes: "Principal First World War model." },
+      { name: "Rifle No. 4 Mk I", period: "1939 (wider production from 1941)", notes: "Second World War standard rifle." },
+      { name: "Rifle No. 5 (Jungle Carbine)", period: "1944", notes: "Shortened carbine." }
+    ],
+    videos: vids("Lee-Enfield rifle"), related: ["mosin-nagant", "gewehr-98", "m1-garand"], tags: [".303", "SMLE", "British service rifle"] },
+
+  { id: "mosin-nagant", name: "Mosin-Nagant", category: "Rifles", subcategory: "Bolt-Action Rifles", alsoIn: ["Historical Military Rifles"],
+    manufacturer: "Tula Arms Plant", country: "Russian Empire", year: 1891, production: "1891 - 1960s", status: "Historical",
+    actionType: "Bolt action",
+    description: "The Russian and later Soviet bolt-action service rifle, produced in vast numbers over more than half a century.",
+    history: "Adopted by the Russian Empire in 1891, the rifle takes its name from Russian designer Sergei Mosin and Belgian designer Leon Nagant, whose magazine and other features contributed to the design. It was produced in Russia and by foreign contractors and served through both world wars. It was updated in 1930 as the M1891/30 and in carbine forms in 1938 and 1944.",
+    mechanism: "Manually operated rotating-bolt action, fed from an internal box magazine loaded by stripper clip.",
+    specifications: { action: "Bolt action", calibre: "7.62x54mmR", length: "approx. 1,232 mm (M1891/30)", barrelLength: "approx. 730 mm", weight: "approx. 4.0 kg", capacity: "5 rounds (internal magazine)" },
+    images: imgs("mosin-nagant"),
+    variants: [
+      { name: "M1891", period: "1891", notes: "Original Imperial Russian rifle." },
+      { name: "M1891/30", period: "1930", notes: "Updated Soviet service rifle." },
+      { name: "M38 carbine", period: "1938", notes: "Short carbine." },
+      { name: "M44 carbine", period: "1944", notes: "Carbine with a folding bayonet." }
+    ],
+    videos: vids("Mosin-Nagant rifle"), related: ["lee-enfield-smle", "gewehr-98", "svd-dragunov"], tags: ["Mosin", "Nagant", "7.62x54R"] },
+
+  { id: "fn-fal", name: "FN FAL", category: "Rifles", subcategory: "Battle Rifles",
+    manufacturer: "FN Herstal", country: "Belgium", year: 1953, production: "1950s - 1980s", status: "Production ended; widely used historically",
+    actionType: "Selective fire",
+    description: "A Belgian 7.62x51mm NATO battle rifle designed by Dieudonne Saive and Ernest Vervier, used by more than 90 countries.",
+    history: "FN began development of the FAL in the late 1940s. After early work on intermediate-cartridge versions, the design was developed for 7.62x51mm NATO. Belgium adopted the FAL in 1953, and it was adopted by many NATO and other nations. The British produced it as the L1A1 Self-Loading Rifle.",
+    mechanism: "Gas-operated with a tilting breech block, fed from a detachable box magazine.",
+    specifications: { action: "Gas-operated; tilting breech block", calibre: "7.62x51mm NATO", length: "approx. 1,090 mm", barrelLength: "approx. 533 mm", weight: "approx. 4.3 kg (unloaded)", capacity: "20 rounds (standard)" },
+    images: imgs("fn-fal"),
+    variants: [
+      { name: "FAL (Belgium)", period: "1953", notes: "Initial Belgian adoption." },
+      { name: "L1A1 SLR (United Kingdom)", period: "c. 1954", notes: "British semi-automatic version." }
+    ],
+    videos: vids("FN FAL"), related: ["ak-47", "m16-ar-15", "m1-garand"], tags: ["Saive", "7.62 NATO"] },
+
+  { id: "winchester-model-1894", name: "Winchester Model 1894", category: "Rifles", subcategory: "Lever-Action Rifles", alsoIn: ["Sporting/Hunting Rifles"],
+    manufacturer: "Winchester", country: "United States", year: 1894, production: "1894 - present (various)", status: "Historical; produced in modern forms",
+    actionType: "Lever action",
+    description: "John Browning's lever-action sporting rifle, among the best-selling hunting rifles in history, chambered in .30-30 Winchester.",
+    history: "Introduced in 1894, the Model 1894 was designed by John Browning and was the first American sporting rifle designed for smokeless powder. It became one of the most widely produced hunting rifles and was later called the Model 94. It remained in production for over a century.",
+    mechanism: "Lever-action repeating rifle with a tubular magazine under the barrel.",
+    specifications: { action: "Lever action; tubular magazine", calibre: ".30-30 Winchester (original; other calibres produced)", length: "varies by variant", barrelLength: "varies by variant", weight: "varies by variant", capacity: "varies by variant" },
+    images: imgs("winchester-model-1894"),
+    variants: [
+      { name: "Model 1894", period: "1894", notes: "Original model." },
+      { name: "Model 94 Angle Eject", period: "c. 1982", notes: "Revised ejection arrangement." }
+    ],
+    videos: vids("Winchester Model 1894"), related: ["winchester-model-1897"], tags: ["Browning", ".30-30", "lever action"],
+    verifyNote: "Specifications vary by production variant." },
+
+  { id: "gewehr-98", name: "Mauser Gewehr 98", category: "Rifles", subcategory: "Bolt-Action Rifles", alsoIn: ["Historical Military Rifles"],
+    manufacturer: "Mauser", country: "Germany", year: 1898, production: "1898 - 1945 (Gewehr 98 and descendants)", status: "Historical",
+    actionType: "Bolt action",
+    description: "The German Empire's bolt-action service rifle, a milestone in Mauser's controlled-feed design.",
+    history: "Adopted in 1898, the Gewehr 98 served the German Army through the First World War. Its action became a model for many military and sporting rifles worldwide. The Karabiner 98k, adopted in 1935, was the standard German rifle of the Second World War.",
+    mechanism: "Manually operated rotating-bolt action with a controlled-feed extractor and a five-round internal box magazine.",
+    specifications: { action: "Bolt action; controlled feed", calibre: "7.92x57mm Mauser", length: "approx. 1,250 mm", barrelLength: "approx. 740 mm", weight: "approx. 4.1 kg", capacity: "5 rounds" },
+    images: imgs("gewehr-98"),
+    variants: [
+      { name: "Gewehr 98", period: "1898", notes: "Original service rifle." },
+      { name: "Karabiner 98a", period: "1908", notes: "Carbine version." },
+      { name: "Karabiner 98k", period: "1935", notes: "Shorter Second World War standard rifle." }
+    ],
+    videos: vids("Mauser Gewehr 98"), related: ["lee-enfield-smle", "mosin-nagant"], tags: ["Mauser", "Kar98k", "7.92mm"] },
+
+  /* ======================= SHOTGUNS ======================= */
+  { id: "holland-royal", name: "Holland & Holland Royal", category: "Shotguns", subcategory: "Side-by-Side", alsoIn: ["Double Barrel", "Hunting Shotguns"],
+    manufacturer: "Holland & Holland", country: "United Kingdom", year: 1883, production: "1883 - present", status: "Bespoke production",
+    actionType: "Break action",
+    description: "The flagship bespoke side-by-side shotgun of a London gunmaker, representing the English 'best gun' tradition.",
+    history: "Holland & Holland introduced the Royal hammerless ejector shotgun in the 1880s. Built largely by hand to the customer's measurements, it became a benchmark for English sporting guns.",
+    mechanism: "Break-action double-barrel shotgun with barrels mounted side by side; sidelock mechanisms are typical of the Royal line.",
+    specifications: { action: "Break action; side-by-side; sidelock", calibre: "Gauge varies (commonly 12 bore)", length: "varies by customer", barrelLength: "varies by customer", weight: "varies by customer", capacity: "2 rounds" },
+    images: imgs("holland-royal"),
+    variants: [{ name: "Royal hammerless ejector", period: "c. 1883", notes: "Historical introduction of the Royal model." }],
+    videos: vids("Holland & Holland Royal shotgun"), related: ["beretta-686"], tags: ["English best gun", "sidelock"],
+    verifyNote: "Details vary by production period; specifications depend on bespoke order." },
+
+  { id: "beretta-686", name: "Beretta 686", category: "Shotguns", subcategory: "Over & Under", alsoIn: ["Double Barrel", "Sporting Shotguns", "Hunting Shotguns"],
+    manufacturer: "Beretta", country: "Italy", year: 1988, production: "late 1980s - present (series)", status: "In production",
+    actionType: "Break action",
+    description: "A popular Italian over-and-under shotgun line widely used for hunting and clay-target sports.",
+    history: "The 686 series of over-and-under shotguns became one of Beretta's best-known sporting and field guns. Multiple versions have been produced for sport, hunting and competition.",
+    mechanism: "Break-action over-and-under shotgun with a boxlock action.",
+    specifications: { action: "Break action; over-and-under", calibre: "12 gauge and other gauges", length: "varies by model", barrelLength: "varies by model", weight: "varies by model", capacity: "2 rounds" },
+    images: imgs("beretta-686"),
+    variants: [
+      { name: "686 Silver Pigeon", period: UNV, notes: "Field and sporting version." },
+      { name: "686 Onyx", period: UNV, notes: "Version with a black receiver." }
+    ],
+    videos: vids("Beretta 686 shotgun"), related: ["holland-royal", "remington-870"], tags: ["clay shooting", "O/U"],
+    verifyNote: "Introduction year and variant dates require verification; specifications vary by model." },
+
+  { id: "remington-870", name: "Remington 870", category: "Shotguns", subcategory: "Pump Action", alsoIn: ["Hunting Shotguns"],
+    manufacturer: "Remington", country: "United States", year: 1950, production: "1950 - present", status: "In production",
+    actionType: "Pump action", featured: true,
+    description: "An American pump-action shotgun, one of the best-selling shotgun designs in history.",
+    history: "Introduced in 1950, the Model 870 is known for its durability and wide range of variants for hunting, sporting and law-enforcement use. It was produced in several gauges and in a very large number of configurations.",
+    mechanism: "Pump-action repeating shotgun with a tubular magazine under the barrel.",
+    specifications: { action: "Pump action; tubular magazine", calibre: "12, 16, 20 and 28 gauge; .410 bore", length: "varies by configuration", barrelLength: "varies by configuration", weight: "varies by configuration", capacity: "varies by configuration" },
+    images: imgs("remington-870"),
+    variants: [
+      { name: "870 Wingmaster", period: "1950s", notes: "Original higher-grade version." },
+      { name: "870 Express", period: UNV, notes: "Later lower-cost version." }
+    ],
+    videos: vids("Remington 870"), related: ["winchester-model-1897", "auto-5"], tags: ["pump shotgun", "Wingmaster"] },
+
+  { id: "auto-5", name: "Browning Auto-5", category: "Shotguns", subcategory: "Semi-Automatic", alsoIn: ["Historical Shotguns", "Hunting Shotguns"],
+    manufacturer: "Browning", country: "United States", year: 1902, production: "1902 - 1998", status: "Historical",
+    actionType: "Semi-automatic",
+    description: "John Browning's long-recoil semi-automatic shotgun, the first commercially successful self-loading shotgun.",
+    history: "John Browning patented the design in 1900, and FN Herstal began production in 1902. It was also produced by Remington (as the Model 11) and others. Production ran through the twentieth century; the last Auto-5 shotguns were produced in Japan, ending in 1998.",
+    mechanism: "Long-recoil operated semi-automatic action with a tubular magazine.",
+    specifications: { action: "Long-recoil; semi-automatic", calibre: "12, 16 and 20 gauge", length: "varies by configuration", barrelLength: "varies by configuration", weight: "varies by configuration", capacity: "varies (tubular magazine)" },
+    images: imgs("auto-5"),
+    variants: [
+      { name: "FN-built Auto-5", period: "1902-1976", notes: "Produced by FN Herstal in Belgium." },
+      { name: "Remington Model 11", period: "1905", notes: "Licensed version produced by Remington." }
+    ],
+    videos: vids("Browning Auto-5"), related: ["remington-870", "winchester-model-1897"], tags: ["Browning", "long recoil"],
+    verifyNote: "Production-location dates require verification against FN/Browning sources." },
+
+  { id: "winchester-model-1897", name: "Winchester Model 1897", category: "Shotguns", subcategory: "Pump Action", alsoIn: ["Historical Shotguns"],
+    manufacturer: "Winchester", country: "United States", year: 1897, production: "1897 - 1957", status: "Historical",
+    actionType: "Pump action",
+    description: "A John Browning-designed pump-action shotgun with an exposed hammer, used for hunting and in military trench-gun versions.",
+    history: "Introduced in 1897, the Model 1897 was a refinement of the earlier Model 1893. It was produced until 1957. During the First World War, trench-gun versions with a bayonet fitting and a heat-shield were issued to US forces.",
+    mechanism: "Pump-action repeating shotgun with an exposed hammer and a tubular magazine.",
+    specifications: { action: "Pump action; exposed hammer", calibre: "12 and 16 gauge", length: "varies by configuration", barrelLength: "varies by configuration", weight: "varies by configuration", capacity: "varies by configuration" },
+    images: imgs("winchester-model-1897"),
+    variants: [{ name: "Model 1897 Trench Gun", period: "c. 1917", notes: "Military version used in the First World War." }],
+    videos: vids("Winchester Model 1897"), related: ["remington-870", "auto-5"], tags: ["trench gun", "Browning"] },
+
+  /* ======================= SNIPER / PRECISION ======================= */
+  { id: "remington-700", name: "Remington 700", category: "Sniper Rifles", subcategory: "Bolt-Action Precision Rifles",
+    manufacturer: "Remington", country: "United States", year: 1962, production: "1962 - present", status: "In production",
+    actionType: "Bolt action", featured: true,
+    description: "An American bolt-action rifle family whose action has served as the basis for numerous sporting, competition and military precision rifles.",
+    history: "Introduced in 1962, the Model 700 became a popular hunting and target rifle. Its action was also adapted for military sniper rifles, including the US Marine Corps M40 (adopted in 1966) and the US Army M24 Sniper Weapon System (adopted in 1988).",
+    mechanism: "Manually operated bolt action with a cylindrical receiver, available in various cartridge options.",
+    specifications: { action: "Bolt action", calibre: "Many calibres (varies by variant)", length: "varies by variant", barrelLength: "varies by variant", weight: "varies by variant", capacity: "varies by variant" },
+    images: imgs("remington-700"),
+    variants: [
+      { name: "Model 700", period: "1962", notes: "Original production." },
+      { name: "M40", period: "1966", notes: "US Marine Corps rifle based on the Model 700." },
+      { name: "M24 SWS", period: "1988", notes: "US Army system based on the Model 700 action." }
+    ],
+    videos: vids("Remington 700"), related: ["accuracy-international-l96a1", "svd-dragunov"], tags: ["M40", "M24", "bolt action"] },
+
+  { id: "accuracy-international-l96a1", name: "Accuracy International L96A1", category: "Sniper Rifles", subcategory: "Bolt-Action Precision Rifles", alsoIn: ["Military Sniper Systems"],
+    manufacturer: "Accuracy International", country: "United Kingdom", year: 1985, production: "1980s - present (family)", status: "Family in production",
+    actionType: "Bolt action",
+    description: "A British bolt-action rifle based on the Accuracy International Precision Marksman, adopted as the British Army L96A1.",
+    history: "Accuracy International was founded in 1978 by Olympic champion Malcolm Cooper. The L96A1, a version of the company's Precision Marksman rifle, was adopted by the British Army in 1985. Later members of the family include the Arctic Warfare series and rifles in larger calibres such as the L115A3.",
+    mechanism: "Manually operated bolt action with an aluminium chassis and a detachable magazine.",
+    specifications: { action: "Bolt action", calibre: "7.62x51mm NATO (L96A1)", length: UNV, barrelLength: UNV, weight: UNV, capacity: "10 rounds (L96A1)" },
+    images: imgs("accuracy-international-l96a1"),
+    variants: [
+      { name: "L96A1", period: "1985", notes: "British Army adoption." },
+      { name: "Arctic Warfare (AW)", period: "c. 1990s", notes: "Subsequent family member." },
+      { name: "L115A3", period: "c. 2008", notes: "Long-range version in .338 Lapua Magnum." }
+    ],
+    videos: vids("Accuracy International L96A1"), related: ["remington-700", "svd-dragunov"], tags: ["Malcolm Cooper", "L115A3"],
+    verifyNote: "Dimensions and variant dates require verification against manufacturer documentation." },
+
+  { id: "svd-dragunov", name: "Dragunov SVD", category: "Sniper Rifles", subcategory: "Semi-Automatic Marksman Rifles", alsoIn: ["Military Sniper Systems"],
+    manufacturer: "Izhmash / Kalashnikov Concern", country: "Soviet Union", year: 1963, production: "1963 - present", status: "In production in several forms",
+    actionType: "Semi-automatic",
+    description: "A Soviet semi-automatic marksman rifle designed by Yevgeny Dragunov, adopted in 1963.",
+    history: "Dragunov's design was selected after competition with other designs and adopted in 1963. It was widely exported and copied. Its role is that of a designated marksman rifle accompanying infantry units.",
+    mechanism: "Short-stroke gas piston, rotating bolt, fed from a detachable box magazine.",
+    specifications: { action: "Gas-operated; short-stroke piston", calibre: "7.62x54mmR", length: "approx. 1,225 mm", barrelLength: "approx. 620 mm", weight: "approx. 4.3 kg (unloaded)", capacity: "10 rounds" },
+    images: imgs("svd-dragunov"),
+    variants: [
+      { name: "SVD", period: "1963", notes: "Original model." },
+      { name: "SVD-S", period: "c. 1990s", notes: "Version with a folding stock." }
+    ],
+    videos: vids("Dragunov SVD"), related: ["remington-700", "ak-47", "mosin-nagant"], tags: ["Dragunov", "marksman rifle"] },
+
+  /* ======================= MACHINE GUNS ======================= */
+  { id: "maxim-gun", name: "Maxim Gun", category: "Machine Guns", subcategory: "Historical Machine Guns", alsoIn: ["Medium Machine Guns"],
+    manufacturer: "Vickers", country: "United Kingdom", year: 1884, production: "1884 - 1940s (various national versions)", status: "Historical",
+    actionType: "Fully automatic",
+    description: "Hiram Maxim's recoil-operated machine gun, the first fully automatic machine gun to see wide military use.",
+    history: "Hiram Maxim demonstrated his design in 1884. The British Army adopted it in 1889. The Vickers company later refined it into the Vickers gun, adopted in 1912. German, Russian and other armies used derivatives in the First World War.",
+    mechanism: "Recoil-operated, water-cooled, belt-fed machine gun.",
+    specifications: { action: "Recoil operated; belt-fed; water-cooled", calibre: "Varies by national version", length: UNV, barrelLength: UNV, weight: "Specifications vary by production variant", capacity: "Belt-fed" },
+    images: imgs("maxim-gun"),
+    variants: [
+      { name: "Maxim gun", period: "1884-1889", notes: "Original British adoption." },
+      { name: "Vickers gun", period: "1912", notes: "British refinement." },
+      { name: "MG 08 (Germany)", period: "1908", notes: "German derivative." },
+      { name: "PM M1910 (Russia)", period: "1910", notes: "Russian derivative." }
+    ],
+    videos: vids("Maxim gun"), related: ["browning-m2", "mg42"], tags: ["Hiram Maxim", "Vickers"] },
+
+  { id: "mg42", name: "MG 42", category: "Machine Guns", subcategory: "General-Purpose Machine Guns", alsoIn: ["Light Machine Guns"],
+    manufacturer: "Mauser", country: "Germany", year: 1942, production: "1942 - 1945", status: "Historical; successors in service",
+    actionType: "Fully automatic",
+    description: "A German belt-fed general-purpose machine gun of the Second World War, noted for pressed-steel construction.",
+    history: "Designed by Werner Gruner at the Grossfuss company, the MG 42 entered service in 1942 as a successor to the MG 34. After the war, it served as the basis for the MG 1 and the MG 3, which remains in service.",
+    mechanism: "Short-recoil operated with a roller-locking system; belt-fed.",
+    specifications: { action: "Recoil operated; roller-locked; belt-fed", calibre: "7.92x57mm Mauser", length: "approx. 1,220 mm", barrelLength: "approx. 533 mm", weight: "approx. 11.6 kg", capacity: "Belt-fed" },
+    images: imgs("mg42"),
+    variants: [
+      { name: "MG 42", period: "1942", notes: "Wartime model." },
+      { name: "MG 1", period: "late 1950s", notes: "Post-war Bundeswehr version." },
+      { name: "MG 3", period: "1968", notes: "Version in 7.62x51mm NATO." }
+    ],
+    videos: vids("MG 42"), related: ["browning-m2", "maxim-gun", "m60"], tags: ["Gruner", "MG3"],
+    verifyNote: "Production attribution: design credited to Grossfuss; large-scale production by multiple firms including Mauser." },
+
+  { id: "browning-m2", name: "Browning M2", category: "Machine Guns", subcategory: "Heavy Machine Guns",
+    manufacturer: "Browning", country: "United States", year: 1933, production: "1933 - present", status: "In service in modern M2A1 form",
+    actionType: "Fully automatic", featured: true,
+    description: "A .50 BMG heavy machine gun designed by John Browning, in service since the 1930s.",
+    history: "Derived from John Browning's earlier .50-calibre designs, the M2 heavy-barrel version was adopted by the US Army in 1933. It has served on vehicles, aircraft, vessels and ground mounts and remains in service in modernised form.",
+    mechanism: "Short-recoil operated, belt-fed machine gun.",
+    specifications: { action: "Short-recoil; belt-fed", calibre: ".50 BMG (12.7x99mm)", length: "approx. 1,653 mm", barrelLength: "approx. 1,143 mm", weight: "approx. 38 kg (gun only)", capacity: "Belt-fed" },
+    images: imgs("browning-m2"),
+    variants: [
+      { name: "M1921", period: "1921", notes: "Earlier water-cooled design." },
+      { name: "M2HB", period: "1933", notes: "Heavy-barrel version." },
+      { name: "M2A1", period: "2010s", notes: "Modernised version." }
+    ],
+    videos: vids("Browning M2 .50 cal"), related: ["mg42", "maxim-gun", "m60"], tags: [".50 cal", "Ma Deuce"],
+    verifyNote: "Variant dates marked approximate." },
+
+  { id: "m60", name: "M60", category: "Machine Guns", subcategory: "General-Purpose Machine Guns",
+    manufacturer: "Saco Defense", country: "United States", year: 1957, production: "1957 - 1990s (various)", status: "Historical; some in service",
+    actionType: "Fully automatic",
+    description: "A US general-purpose machine gun adopted in 1957 and chambered in 7.62x51mm NATO.",
+    history: "The M60 was adopted by the US Army in 1957 and was used extensively during the Vietnam War. It incorporated features from German designs, including the MG 42 and the FG 42. It was later replaced in many roles by other designs.",
+    mechanism: "Gas-operated, belt-fed, using a rotating bolt.",
+    specifications: { action: "Gas-operated; belt-fed", calibre: "7.62x51mm NATO", length: "approx. 1,105 mm", barrelLength: "approx. 560 mm", weight: "approx. 10.4 kg", capacity: "Belt-fed" },
+    images: imgs("m60"),
+    variants: [
+      { name: "M60", period: "1957", notes: "Original model." },
+      { name: "M60E3 / M60E4", period: "1980s-1990s", notes: "Later modernised versions." }
+    ],
+    videos: vids("M60 machine gun"), related: ["mg42", "browning-m2"], tags: ["GPMG", "Vietnam"],
+    verifyNote: "Manufacturer attribution and variant dates require verification." }
+];
+
+/* ---- HISTORICAL TIMELINE ----
+   "year" (number), "title", "text"; optional "ref" = firearm id (adds an entry link). */
+const historicalTimeline = [
+  { year: 1807, title: "Izhevsk arms factory established", text: "A Russian state arms factory is founded at Izhevsk, later the home of Kalashnikov rifles." },
+  { year: 1836, title: "Colt patents the revolver", text: "Samuel Colt patents his revolving-cylinder firearm and founds a company in Paterson, New Jersey." },
+  { year: 1873, title: "Colt Single Action Army adopted", text: "The US Army adopts the Colt Single Action Army revolver.", ref: "colt-single-action-army" },
+  { year: 1884, title: "Maxim demonstrates his machine gun", text: "Hiram Maxim demonstrates a recoil-operated automatic machine gun.", ref: "maxim-gun" },
+  { year: 1886, title: "France adopts the Lebel rifle", text: "One of the first major military rifles designed for smokeless powder." },
+  { year: 1889, title: "FN founded in Herstal", text: "Fabrique Nationale is founded in Belgium to produce Mauser-pattern rifles." },
+  { year: 1891, title: "Mosin-Nagant adopted", text: "The Russian Empire adopts the bolt-action M1891 rifle.", ref: "mosin-nagant" },
+  { year: 1898, title: "Gewehr 98 adopted", text: "Germany adopts the Mauser-designed Gewehr 98.", ref: "gewehr-98" },
+  { year: 1908, title: "Luger P08 adopted", text: "The German Army adopts the Parabellum-Pistole 08.", ref: "luger-p08" },
+  { year: 1911, title: "M1911 adopted", text: "The US Army adopts John Browning's M1911 pistol.", ref: "m1911" },
+  { year: 1915, title: "Webley Mk VI", text: "The Webley Mk VI revolver is adopted by the British military.", ref: "webley-mk-vi" },
+  { year: 1918, title: "First submachine guns in combat", text: "Germany fields the MP 18, regarded as the first submachine gun used in combat." },
+  { year: 1921, title: "Thompson submachine gun", text: "Auto-Ordnance produces the first Thompson submachine gun.", ref: "thompson-m1a1" },
+  { year: 1933, title: "Browning M2 adopted", text: "The heavy-barrel .50-calibre Browning M2 is adopted by the US Army.", ref: "browning-m2" },
+  { year: 1936, title: "M1 Garand adopted", text: "The US adopts the M1 Garand as its standard service rifle.", ref: "m1-garand" },
+  { year: 1940, title: "MP 40", text: "The MP 40 enters German service.", ref: "mp40" },
+  { year: 1941, title: "Simplified wartime designs", text: "The Sten (UK) and PPSh-41 (USSR) enter production, reflecting low-cost mass-production methods.", ref: "sten" },
+  { year: 1942, title: "MG 42 enters service", text: "The German MG 42 is introduced.", ref: "mg42" },
+  { year: 1944, title: "StG 44 introduced", text: "Germany fields the StG 44, an early mass-produced assault rifle using an intermediate cartridge." },
+  { year: 1949, title: "AK adopted by the Soviet Army", text: "The Kalashnikov-designed rifle enters Soviet service.", ref: "ak-47" },
+  { year: 1950, title: "Remington 870", text: "Remington introduces the Model 870 pump-action shotgun.", ref: "remington-870" },
+  { year: 1953, title: "FN FAL adopted", text: "Belgium adopts the FN FAL battle rifle.", ref: "fn-fal" },
+  { year: 1954, title: "Uzi adopted; NATO 7.62x51mm", text: "Israel adopts the Uzi, and NATO moves to standardise the 7.62x51mm cartridge.", ref: "uzi" },
+  { year: 1957, title: "M60 adopted", text: "The US Army adopts the M60 machine gun.", ref: "m60" },
+  { year: 1963, title: "Dragunov SVD adopted", text: "The Soviet Union adopts the SVD marksman rifle.", ref: "svd-dragunov" },
+  { year: 1964, title: "M16 family enters service", text: "The US adopts the 5.56mm rifle derived from Eugene Stoner's AR-15.", ref: "m16-ar-15" },
+  { year: 1966, title: "MP5 enters service", text: "Heckler & Koch's MP5 enters German police and border-guard service.", ref: "mp5" },
+  { year: 1974, title: "AK-74", text: "The Soviet Union introduces the small-calibre AK-74.", ref: "ak-47" },
+  { year: 1976, title: "Beretta 92 introduced", text: "Beretta introduces the 92 pistol.", ref: "beretta-92fs" },
+  { year: 1982, title: "Glock 17", text: "Austria adopts the polymer-framed Glock 17.", ref: "glock-17" },
+  { year: 1985, title: "Beretta M9 adopted", text: "The US Armed Forces adopt a Beretta 92 variant as the M9.", ref: "beretta-92fs" },
+  { year: 2017, title: "US Army selects the Modular Handgun System", text: "The US Army selects the SIG Sauer P320 as its Modular Handgun System." },
+  { year: 2018, title: "AK-12 adopted", text: "The Russian military adopts the AK-12.", ref: "ak-47" }
+];
+
+/* ---- GENERAL KNOWLEDGE TOPICS ---- */
+const educationalTopics = [
+  { id: "what-is-a-firearm", title: "What is a firearm?", summary: "A basic definition and the main parts of a firearm.",
+    body: ["A firearm is a portable gun that uses a propellant, such as gunpowder, to fire a projectile through a barrel. Different countries define firearms in different legal terms, so legal definitions vary.", "Most modern firearms share common parts: a barrel, an action (the mechanism that loads, fires and ejects), a trigger group, a stock or grip, and a source of ammunition such as a magazine or cylinder."] },
+  { id: "major-categories", title: "Major firearm categories", summary: "Handguns, rifles, shotguns, submachine guns and machine guns.",
+    body: ["Handguns are designed to be held and fired with one or two hands and include pistols and revolvers. Rifles have a rifled barrel and are fired from the shoulder. Shotguns generally use a smooth bore and fire shot or slugs.", "Submachine guns are compact automatic weapons firing pistol-calibre cartridges. Machine guns are belt- or magazine-fed automatic weapons designed for sustained fire. Categories can overlap and vary by country."] },
+  { id: "pistol-vs-revolver", title: "Pistol vs revolver", summary: "Two families of handguns, distinguished by how ammunition is held.",
+    body: ["A revolver holds its cartridges in a rotating cylinder with several chambers, each aligned in turn with the barrel. A pistol, in general usage, refers to a handgun with a chamber built into the barrel and a magazine, typically in the grip.", "In everyday use 'pistol' often means a semi-automatic handgun, though historically the word covers many types."] },
+  { id: "action-terminology", title: "Basic action terminology", summary: "How firearm mechanisms are named.",
+    body: ["The 'action' is the mechanism that loads, fires and ejects. Common action types include bolt action, lever action, pump action, break action and semi-automatic action.", "Terms like gas-operated, blowback and recoil-operated describe how a self-loading action uses energy from the fired cartridge."] },
+  { id: "calibre", title: "What is calibre?", summary: "A measure of bore size and the naming of cartridges.",
+    body: ["Calibre generally refers to the internal diameter of a barrel or the diameter of the projectile, expressed in inches (for example .45) or millimetres (for example 9mm). Shotguns use 'gauge', a different system based on the number of lead balls of bore diameter that make up a pound.", "Cartridge names often include additional information, such as case length or the cartridge's origin: 9x19mm Parabellum, 7.62x39mm, .30-06 Springfield."] },
+  { id: "cartridge-terms", title: "Cartridge terminology", summary: "The parts of a modern cartridge, described at a high level.",
+    body: ["A modern cartridge generally consists of a case, a primer, propellant and a projectile. Cartridges are described as rimfire or centerfire depending on how the primer is arranged.", "Cartridge names often reflect the manufacturer, the designer or the military organisation that adopted them."] },
+  { id: "magazine-vs-cylinder", title: "Magazine vs cylinder", summary: "Two ways of holding ammunition.",
+    body: ["A magazine stores cartridges and feeds them into the chamber. It can be detachable, fixed or tubular. A cylinder is a rotating drum with multiple chambers used in revolvers.", "Both are described by their capacity, but capacities vary by model and by local regulation."] },
+  { id: "history-of-development", title: "Historical development of firearms", summary: "From matchlocks to modern cartridge firearms.",
+    body: ["Early handheld firearms appeared in the fifteenth century as matchlocks. The wheel lock followed in the early sixteenth century and the flintlock in the early seventeenth century. Percussion ignition emerged in the early nineteenth century.", "Metallic cartridges and breech-loading mechanisms became widespread in the mid-nineteenth century, and smokeless powder arrived in the 1880s. These changes enabled repeating rifles, revolvers and machine guns."] },
+  { id: "manufacturing-evolution", title: "Evolution of manufacturing", summary: "From craft production to interchangeable parts and stamping.",
+    body: ["Early firearms were hand-fitted by craftsmen. During the nineteenth century manufacturers such as Colt and the national armouries developed machine tools and interchangeable parts, enabling large-scale production.", "In the Second World War, stamped steel and simplified designs such as the Sten and PPSh-41 reduced production time, while later decades introduced polymers and computer-controlled machining."] },
+  { id: "sa-vs-da", title: "Single-action vs double-action (terminology)", summary: "How trigger systems are described.",
+    body: ["In a single-action system, the trigger performs one function: releasing a hammer or striker that is already cocked. In a double-action system the trigger can both cock and release the hammer.", "'Double-action only' describes systems that perform both functions on every trigger pull. These are terms for describing mechanisms, not handling instructions."] },
+  { id: "safety-awareness", title: "General safety awareness", summary: "A high-level note on safety culture.",
+    body: ["Firearm safety is widely taught through formal training provided by qualified instructors and recognised organisations. Common themes in firearm safety education include secure storage, preventing unauthorised access, and compliance with local law.", "This archive provides historical reference only and does not provide handling or operating instruction. Anyone seeking to handle firearms should seek certified training and follow local laws."] },
+  { id: "materials", title: "Historical manufacturing materials", summary: "Wood, steel, and later polymers.",
+    body: ["Early firearms combined iron or steel barrels with wooden stocks. Blued steel and walnut stocks remained dominant into the twentieth century.", "Aluminium alloys, stainless steel, synthetic stock materials and polymer frames became common in the second half of the twentieth century."] },
+  { id: "modern-vs-historical", title: "Modern vs historical designs", summary: "What has changed and what has endured.",
+    body: ["Many modern designs build on principles established a century or more ago. The John Browning designs from the 1900s, such as the M1911, remain influential.", "Changes include the use of polymers, modular components, integrated accessory mounting and updated cartridges."] }
+];
+
+/* ---- GLOSSARY ---- */
+const glossary = [
+  { term: "Action", definition: "The mechanism of a firearm that loads, fires and ejects cartridges. Types include bolt, lever, pump, break and semi-automatic actions." },
+  { term: "Barrel", definition: "The tube through which a projectile travels when fired." },
+  { term: "Belt-fed", definition: "A feeding system in which cartridges are carried on a flexible belt of metal links or fabric." },
+  { term: "Blowback", definition: "A self-loading operating system in which the cartridge's pressure pushes the case back against the bolt, driving the action." },
+  { term: "Bolt Action", definition: "An action in which a bolt is manually operated to load and eject cartridges." },
+  { term: "Breech", definition: "The rear end of a barrel where a cartridge is loaded." },
+  { term: "Calibre", definition: "The internal diameter of a barrel, or the diameter of a projectile, expressed in inches or millimetres." },
+  { term: "Cartridge", definition: "A self-contained unit of ammunition normally consisting of a case, primer, propellant and projectile." },
+  { term: "Centerfire", definition: "A cartridge type in which the primer is in the center of the case head." },
+  { term: "Chamber", definition: "The part of a firearm in which a cartridge sits when it is fired." },
+  { term: "Cylinder", definition: "A rotating drum with several chambers, used in revolvers." },
+  { term: "Double Action", definition: "A trigger mechanism in which pulling the trigger both cocks and releases the hammer or striker." },
+  { term: "Double Action Only", definition: "A trigger system in which every shot is fired by a long trigger pull that performs both cocking and release." },
+  { term: "Gas-operated", definition: "A self-loading system that uses gas tapped from the barrel to cycle the action." },
+  { term: "Gauge", definition: "The size designation of shotguns, based on the number of lead balls of bore diameter making up one pound." },
+  { term: "Lever Action", definition: "An action operated by a lever that is moved to load, eject and cock." },
+  { term: "Magazine", definition: "A container that stores cartridges and feeds them to the chamber." },
+  { term: "Pump Action", definition: "An action operated by sliding a fore-end back and forth." },
+  { term: "Receiver", definition: "The main body of a firearm that houses the action." },
+  { term: "Recoil-operated", definition: "A self-loading system that uses the rearward movement of the barrel or breech during recoil to cycle the action." },
+  { term: "Rifling", definition: "Spiral grooves cut into the inside of a barrel that cause the projectile to spin." },
+  { term: "Rimfire", definition: "A cartridge type in which the priming compound is held in the rim of the case." },
+  { term: "Safety", definition: "A mechanism intended to help prevent unintentional firing." },
+  { term: "Selective Fire", definition: "A firearm that offers more than one firing mode, such as semi-automatic and automatic." },
+  { term: "Semi-Automatic", definition: "A self-loading action that fires one round per trigger pull and reloads automatically." },
+  { term: "Single Action", definition: "A trigger mechanism that performs one function: releasing a hammer or striker that has already been cocked." },
+  { term: "Smoothbore", definition: "A barrel without rifling, as is typical of shotguns." },
+  { term: "Stock", definition: "The part of a long gun that is held against the shoulder." },
+  { term: "Trigger", definition: "The lever that releases the firing mechanism." }
+];
+
+/* ---- VIDEO RESOURCES (topic-level) ----
+   Replace each url with a specific YouTube video link when you choose one. */
+const videos = [
+  { title: "Firearms history overview", topic: "History", description: "Broad introductions to the development of firearms.", url: ytSearch("history of firearms documentary") },
+  { title: "From matchlock to cartridge", topic: "History", description: "The development of ignition systems.", url: ytSearch("matchlock wheellock flintlock history") },
+  { title: "History of the semi-automatic pistol", topic: "Handguns", description: "Pistol development from the 1890s onward.", url: ytSearch("history of the semi-automatic pistol") },
+  { title: "Revolvers through history", topic: "Handguns", description: "From early percussion revolvers to hand-ejector models.", url: ytSearch("history of the revolver") },
+  { title: "Submachine guns in the World Wars", topic: "SMGs", description: "Development of the submachine gun.", url: ytSearch("history of submachine guns") },
+  { title: "Military rifles of the 20th century", topic: "Rifles", description: "Bolt-action and self-loading service rifles.", url: ytSearch("history of military rifles") },
+  { title: "Sporting shotguns and gunmaking", topic: "Shotguns", description: "Traditional and modern shotgun manufacturing.", url: ytSearch("shotgun history gunmaking") },
+  { title: "Precision rifles history", topic: "Sniper Rifles", description: "The development of precision and marksman rifles.", url: ytSearch("history of sniper rifles") },
+  { title: "Machine guns: from Maxim to GPMG", topic: "Machine Guns", description: "The history of machine guns.", url: ytSearch("history of machine guns") },
+  { title: "Museum collections and curators", topic: "Museums", description: "Museum talks about arms and armour collections.", url: ytSearch("firearms museum collection tour") }
+];
+
+// ================================
+// DOM ELEMENTS
+// ================================
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const el = {
+  nav: $("#primaryNav"), burger: $("#burger"), megaItem: $("#megaItem"), megaBtn: $("#megaBtn"), megaGrid: $("#megaGrid"),
+  themeBtn: $("#themeBtn"), themeIcon: $("#themeIcon"), favBadge: $("#favBadge"), toTop: $("#toTop"),
+  searchInput: $("#searchInput"), searchClear: $("#searchClear"), suggest: $("#suggestList"), searchResults: $("#searchResults"), tryChips: $("#tryChips"),
+  categoryGrid: $("#categoryGrid"), featuredGrid: $("#featuredGrid"),
+  fCategory: $("#fCategory"), fSub: $("#fSub"), fMaker: $("#fMaker"), fCountry: $("#fCountry"), fPeriod: $("#fPeriod"), fAction: $("#fAction"),
+  sortBy: $("#sortBy"), resultCount: $("#resultCount"), resultsGrid: $("#resultsGrid"), resultsEmpty: $("#resultsEmpty"), loadMore: $("#loadMore"),
+  resetFilters: $("#resetFilters"), favOnly: $("#favOnly"), favGrid: $("#favGrid"), favEmpty: $("#favEmpty"),
+  mRegion: $("#mRegion"), mCountry: $("#mCountry"), mCategory: $("#mCategory"), mName: $("#mName"), mCount: $("#mCount"), mReset: $("#mReset"),
+  makerList: $("#makerList"), makerEmpty: $("#makerEmpty"),
+  eraTabs: $("#eraTabs"), eraDesc: $("#eraDesc"), timeline: $("#timeline"),
+  topicGrid: $("#topicGrid"), glossSearch: $("#glossSearch"), glossaryGrid: $("#glossaryGrid"), videoGrid: $("#videoGrid"), statsGrid: $("#statsGrid"),
+  modal: $("#modal"), modalPanel: $("#modalPanel"), modalContent: $("#modalContent"), crumbs: $("#crumbs"), modalBack: $("#modalBack"),
+  lightbox: $("#lightbox"), lightboxInner: $("#lightboxInner")
+};
+
+// ================================
+// STATE & UTILITIES
+// ================================
+const PAGE_SIZE = 12;
+const state = {
+  filters: { category: "", subcategory: "", manufacturer: "", country: "", period: "", action: "" },
+  favOnly: false, sort: "az", visible: PAGE_SIZE,
+  maker: { region: "", country: "", category: "", q: "" },
+  era: "all", modalStack: [], lastFocus: null, activeSuggest: -1, searchHits: []
+};
+
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } }
+};
+const uniq = arr => Array.from(new Set(arr));
+const fSubs = f => [f.subcategory].concat(f.alsoIn || []);
+const getMaker = key => manufacturers.find(m => m.name === key || m.id === key);
+const getFirearm = id => firearms.find(f => f.id === id);
+const getCat = name => categories.find(c => c.name === name);
+const catLabel = c => c.full || c.name;
+const eraOf = year => eras.find(e => year >= e.from && year <= e.to) || eras[eras.length - 1];
+const countIn = name => firearms.filter(f => f.category === name).length;
+
+const ICONS = {
+  handguns: '<path d="M3 7h15l2 2v3h-6l-1 6H9l1-6H3z"/>',
+  smgs: '<path d="M2 8h13v3h-5l-1 6H6l1-6H2z"/><path d="M15 9h7"/>',
+  rifles: '<path d="M2 14h12l3-3h5v2h-4l-2 2H2z"/><path d="M6 14v3"/>',
+  shotguns: '<path d="M2 13h13l2-2h5v3h-5l-1 1H2z"/><path d="M5 14l2 3"/>',
+  sniper: '<path d="M2 14h14l2-2h4v2l-3 1H2z"/><path d="M8 10h5v2H8z"/><path d="M5 15v3"/>',
+  machine: '<path d="M2 12h8l2-2h6l2 2h2v3h-4v3h-3v-3H2z"/>',
+  book: '<path d="M4 5h11a4 4 0 0 1 4 4v10H8a4 4 0 0 1-4-4z"/><path d="M8 9h7"/>',
+  heart: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>',
+  moon: '<path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/>',
+  play: '<path d="M8 5l11 7-11 7z"/>',
+  ext: '<path d="M14 4h6v6M20 4l-9 9M18 14v5H5V6h5"/>'
+};
+function ic(name, cls = "") {
+  return '<svg class="ic ' + cls + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICONS[name] || ICONS.book) + "</svg>";
+}
+
+/* ---- Fallback-safe image box: a placeholder sits underneath; the <img> is removed if it fails to load. ---- */
+function imgBox(src, alt, catName, cls) {
+  const cat = getCat(catName);
+  const icon = cat ? cat.icon : "book";
+  return '<div class="imgbox ' + (cls || "") + '"><div class="ph" aria-hidden="true">' + ic(icon, "ph-ic") +
+    '<span class="ph-t">Image placeholder</span><span class="ph-p">' + esc(src || "images/your-image.jpg") + "</span></div>" +
+    (src ? '<img src="' + esc(src) + '" alt="' + esc(alt) + '" loading="lazy" onerror="this.remove()">' : "") + "</div>";
+}
+
+// ================================
+// FAVORITES
+// ================================
+let favorites = store.get("fka_favorites", []);
+if (!Array.isArray(favorites)) favorites = [];
+const isFav = id => favorites.includes(id);
+function toggleFav(id) {
+  favorites = isFav(id) ? favorites.filter(x => x !== id) : favorites.concat(id);
+  store.set("fka_favorites", favorites);
+  syncFavUI();
+}
+function syncFavUI() {
+  el.favBadge.textContent = favorites.length;
+  el.favBadge.hidden = favorites.length === 0;
+  $$("[data-fav]").forEach(b => {
+    const on = isFav(b.dataset.fav);
+    b.setAttribute("aria-pressed", on ? "true" : "false");
+    b.setAttribute("aria-label", (on ? "Remove bookmark: " : "Bookmark: ") + (getFirearm(b.dataset.fav) || {}).name);
+  });
+  renderFavorites();
+  if (state.favOnly) renderExplorer();
+}
+
+// ================================
+// RENDER FUNCTIONS
+// ================================
+function favBtn(id) {
+  const on = isFav(id);
+  return '<button class="fav" type="button" data-fav="' + esc(id) + '" aria-pressed="' + on + '" aria-label="' + (on ? "Remove bookmark: " : "Bookmark: ") + esc((getFirearm(id) || {}).name) + '">' + ic("heart") + "</button>";
+}
+
+function firearmCard(f) {
+  const img = (f.images && f.images[0]) || "";
+  return '<article class="card fcard reveal" data-open="' + esc(f.id) + '" tabindex="-1">' + favBtn(f.id) +
+    imgBox(img, f.name + " - primary image", f.category) +
+    '<div class="card-body"><div class="eyebrow">' + esc(f.category) + " &middot; " + esc(f.subcategory) + "</div>" +
+    '<h3><button class="card-link" type="button" data-open="' + esc(f.id) + '">' + esc(f.name) + "</button></h3>" +
+    '<p class="meta">' + esc(f.manufacturer) + " &middot; " + esc(f.country) + " &middot; " + esc(f.year) + "</p>" +
+    '<p class="desc">' + esc(f.description) + '</p><span class="more">View entry &rarr;</span></div></article>';
+}
+
+function renderMega() {
+  el.megaGrid.innerHTML = categories.map(c =>
+    '<div class="mega-col"><a class="mega-h" href="#explorer" data-cat="' + esc(c.name) + '">' + esc(catLabel(c)) + "</a><ul>" +
+    c.subcategories.map(s => '<li><a href="#explorer" data-cat="' + esc(c.name) + '" data-sub="' + esc(s) + '">' + esc(s) + "</a></li>").join("") + "</ul></div>"
+  ).join("");
+}
+
+function renderCategories() {
+  el.categoryGrid.innerHTML = categories.map(c => {
+    const n = countIn(c.name);
+    return '<article class="card catcard reveal"><div class="cc-ic">' + ic(c.icon) + "</div><h3>" + esc(catLabel(c)) + "</h3><p>" + esc(c.description) +
+      '</p><div class="count">' + n + (n === 1 ? " entry" : " entries") + " &middot; " + c.subcategories.length + " subcategories</div>" +
+      '<button class="btn btn-sm" type="button" data-cat="' + esc(c.name) + '">Explore ' + esc(c.name) + " &rarr;</button></article>";
+  }).join("");
+}
+
+function renderFeatured() {
+  const list = firearms.filter(f => f.featured).slice(0, 8);
+  el.featuredGrid.innerHTML = list.map(firearmCard).join("");
+}
+
+function fillSelect(sel, firstLabel, options, current) {
+  sel.innerHTML = '<option value="">' + esc(firstLabel) + "</option>" + options.map(o => {
+    const v = typeof o === "string" ? o : o.value, l = typeof o === "string" ? o : o.label;
+    return '<option value="' + esc(v) + '"' + (v === current ? " selected" : "") + ">" + esc(l) + "</option>";
+  }).join("");
+}
+
+function populateFilters() {
+  const F = state.filters;
+  fillSelect(el.fCategory, "All categories", categories.map(c => ({ value: c.name, label: catLabel(c) })), F.category);
+  // Subcategories: grouped by category when no category selected
+  if (F.category) {
+    fillSelect(el.fSub, "All subcategories", getCat(F.category).subcategories.map(s => ({ value: s, label: s + " (" + firearms.filter(f => f.category === F.category && fSubs(f).includes(s)).length + ")" })), F.subcategory);
+  } else {
+    el.fSub.innerHTML = '<option value="">All subcategories</option>' + categories.map(c =>
+      '<optgroup label="' + esc(catLabel(c)) + '">' + c.subcategories.map(s => '<option value="' + esc(s) + '"' + (s === F.subcategory ? " selected" : "") + ">" + esc(s) + "</option>").join("") + "</optgroup>").join("");
+  }
+  fillSelect(el.fMaker, "All manufacturers", uniq(firearms.map(f => f.manufacturer)).sort(), F.manufacturer);
+  fillSelect(el.fCountry, "All countries", uniq(firearms.map(f => f.country)).sort(), F.country);
+  const usedEras = eras.filter(e => firearms.some(f => eraOf(f.year).id === e.id));
+  fillSelect(el.fPeriod, "All periods", usedEras.map(e => ({ value: e.id, label: e.label })), F.period);
+  fillSelect(el.fAction, "All action types", uniq(firearms.map(f => f.actionType).filter(Boolean)).sort(), F.action);
+}
+
+function matchesFilters(f) {
+  const F = state.filters;
+  if (F.category && f.category !== F.category) return false;
+  if (F.subcategory && !fSubs(f).includes(F.subcategory)) return false;
+  if (F.manufacturer && f.manufacturer !== F.manufacturer) return false;
+  if (F.country && f.country !== F.country) return false;
+  if (F.period && eraOf(f.year).id !== F.period) return false;
+  if (F.action && f.actionType !== F.action) return false;
+  if (state.favOnly && !isFav(f.id)) return false;
+  return true;
+}
+
+function sortList(list) {
+  const by = {
+    az: (a, b) => a.name.localeCompare(b.name),
+    za: (a, b) => b.name.localeCompare(a.name),
+    oldest: (a, b) => a.year - b.year || a.name.localeCompare(b.name),
+    newest: (a, b) => b.year - a.year || a.name.localeCompare(b.name),
+    maker: (a, b) => a.manufacturer.localeCompare(b.manufacturer) || a.name.localeCompare(b.name)
+  };
+  return list.slice().sort(by[state.sort] || by.az);
+}
+
+function renderExplorer() {
+  const list = sortList(firearms.filter(matchesFilters));
+  const shown = list.slice(0, state.visible);
+  el.resultsGrid.innerHTML = shown.map(firearmCard).join("");
+  el.resultsEmpty.hidden = list.length !== 0;
+  el.loadMore.hidden = list.length <= state.visible;
+  el.resultCount.innerHTML = "Showing <b>" + shown.length + "</b> of <b>" + list.length + "</b> " + (list.length === 1 ? "entry" : "entries");
+  el.favOnly.setAttribute("aria-pressed", state.favOnly ? "true" : "false");
+  el.favOnly.classList.toggle("active", state.favOnly);
+  observeReveals();
+}
+
+function renderFavorites() {
+  const list = favorites.map(getFirearm).filter(Boolean);
+  el.favGrid.innerHTML = list.map(firearmCard).join("");
+  el.favEmpty.hidden = list.length > 0;
+  observeReveals();
+}
+
+/* ---- Manufacturers ---- */
+function makerCategories(m) {
+  return uniq((m.productCategories || []).concat(firearms.filter(f => f.manufacturer === m.name).map(f => f.category)));
+}
+function populateMakerFilters() {
+  const M = state.maker;
+  fillSelect(el.mRegion, "All regions", regionOrder.filter(r => manufacturers.some(m => m.region === r)), M.region);
+  const pool = manufacturers.filter(m => !M.region || m.region === M.region);
+  fillSelect(el.mCountry, "All countries", uniq(pool.map(m => m.country)).sort(), M.country);
+  fillSelect(el.mCategory, "All categories", categories.map(c => ({ value: c.name, label: catLabel(c) })), M.category);
+}
+function renderMakers() {
+  const M = state.maker, q = M.q.trim().toLowerCase();
+  const list = manufacturers.filter(m =>
+    (!M.region || m.region === M.region) && (!M.country || m.country === M.country) &&
+    (!M.category || makerCategories(m).includes(M.category)) && (!q || m.name.toLowerCase().includes(q) || m.country.toLowerCase().includes(q)));
+  el.mCount.innerHTML = "<b>" + list.length + "</b> of " + manufacturers.length + " manufacturers";
+  el.makerEmpty.hidden = list.length !== 0;
+  let html = "";
+  regionOrder.forEach(r => {
+    const inRegion = list.filter(m => m.region === r);
+    if (!inRegion.length) return;
+    html += '<div class="region"><h3>' + esc(r) + "</h3>";
+    uniq(inRegion.map(m => m.country)).sort().forEach(c => {
+      html += "<h4>" + esc(c) + '</h4><div class="mgrid">' + inRegion.filter(m => m.country === c).sort((a, b) => a.name.localeCompare(b.name)).map(m => {
+        const n = firearms.filter(f => f.manufacturer === m.name).length;
+        return '<button class="card mcard reveal" type="button" data-maker="' + esc(m.id) + '"><h5>' + esc(m.name) + "</h5><p>" + esc(m.country) + " &middot; Founded: " + esc(String(m.founded).split(" (")[0]) + '</p><div class="tags">' +
+          '<span class="chip">' + n + (n === 1 ? " entry" : " entries") + "</span>" + (m.verify ? '<span class="chip">Needs verification</span>' : "") + "</div></button>";
+      }).join("") + "</div>";
+    });
+    html += "</div>";
+  });
+  el.makerList.innerHTML = html;
+  observeReveals();
+}
+
+/* ---- Timeline ---- */
+function renderEraTabs() {
+  el.eraTabs.innerHTML = '<button class="chip' + (state.era === "all" ? " active" : "") + '" type="button" data-era="all">All eras</button>' +
+    eras.map(e => '<button class="chip' + (state.era === e.id ? " active" : "") + '" type="button" data-era="' + e.id + '">' + esc(e.label) + "</button>").join("");
+}
+function renderTimeline() {
+  renderEraTabs();
+  const era = eras.find(e => e.id === state.era);
+  el.eraDesc.textContent = era ? era.desc : "Select an era to filter the milestones, or browse them all in chronological order.";
+  const list = historicalTimeline.filter(t => !era || (t.year >= era.from && t.year <= era.to)).sort((a, b) => a.year - b.year);
+  el.timeline.innerHTML = list.map(t => {
+    const f = t.ref && getFirearm(t.ref);
+    return '<li class="tl-item reveal"><div class="tl-year">' + t.year + '</div><div class="tl-card"><div class="tl-era">' + esc(eraOf(t.year).label) + "</div><h4>" + esc(t.title) + "</h4><p>" + esc(t.text) + "</p>" +
+      (f ? '<button class="chip" type="button" data-open="' + esc(f.id) + '">' + esc(f.name) + " &rarr;</button>" : "") + "</div></li>";
+  }).join("");
+  observeReveals();
+}
+
+/* ---- Knowledge / glossary / videos / stats ---- */
+function renderKnowledge() {
+  el.topicGrid.innerHTML = educationalTopics.map(t =>
+    '<button class="card topic reveal" type="button" data-topic="' + esc(t.id) + '"><h3>' + esc(t.title) + "</h3><p>" + esc(t.summary) + '</p><span class="more">Read more &rarr;</span></button>').join("");
+}
+function renderGlossary() {
+  const q = el.glossSearch.value.trim().toLowerCase();
+  const list = glossary.filter(g => !q || g.term.toLowerCase().includes(q) || g.definition.toLowerCase().includes(q)).sort((a, b) => a.term.localeCompare(b.term));
+  el.glossaryGrid.innerHTML = list.length ? list.map(g => '<button class="term" type="button" data-term="' + esc(g.term) + '">' + esc(g.term) + "</button>").join("") : '<div class="empty" style="grid-column:1/-1">No glossary terms match.</div>';
+}
+function renderVideos() {
+  el.videoGrid.innerHTML = videos.map(v =>
+    '<article class="card vcard reveal"><div class="eyebrow">' + esc(v.topic) + "</div><h3>" + esc(v.title) + "</h3><p>" + esc(v.description) + '</p><a class="btn btn-sm" href="' + esc(v.url) + '" target="_blank" rel="noopener noreferrer"><span class="yt">' + ic("play") + "</span> Watch on YouTube</a></article>").join("");
+}
+function renderStats() {
+  const countries = uniq(manufacturers.map(m => m.country));
+  const periods = uniq(firearms.map(f => eraOf(f.year).id));
+  const items = [["Categories", categories.length], ["Firearm Entries", firearms.length], ["Manufacturers", manufacturers.length], ["Countries", countries.length], ["Historical Periods", periods.length]];
+  el.statsGrid.innerHTML = items.map(i => '<div class="stat reveal"><b class="count" data-target="' + i[1] + '">0</b><span>' + i[0] + "</span></div>").join("");
+  observeReveals();
+  observeCounters();
+}
+
+// ================================
+// MODALS
+// ================================
+const specLabels = [["action", "Action / mechanism"], ["calibre", "Calibre / cartridge"], ["length", "Overall length"], ["barrelLength", "Barrel length"], ["weight", "Weight"], ["capacity", "Magazine / cylinder capacity"]];
+
+function crumbsHTML(parts) {
+  return parts.map((p, i) => {
+    const last = i === parts.length - 1;
+    if (last) return '<span class="cur" aria-current="page">' + esc(p.label) + "</span>";
+    return (p.attrs ? '<a href="#" ' + p.attrs + ">" + esc(p.label) + "</a>" : "<span>" + esc(p.label) + "</span>") + '<span class="sep" aria-hidden="true">&rsaquo;</span>';
+  }).join("");
+}
+
+function renderFirearmDetail(f) {
+  const maker = getMaker(f.manufacturer);
+  const cat = getCat(f.category);
+  const images = (f.images && f.images.length) ? f.images : [""];
+  const specs = f.specifications || {};
+  const rows = specLabels.map(([k, l]) => "<tr><th scope=\"row\">" + l + "</th><td>" + esc(specs[k] || UNV) + "</td></tr>").join("");
+  const related = (f.related || []).map(getFirearm).filter(Boolean);
+  crumbs([{ label: "Home", attrs: 'data-close-go="home"' }, { label: "Categories", attrs: 'data-close-go="categories"' },
+    { label: catLabel(cat), attrs: 'data-cat="' + esc(f.category) + '"' }, { label: f.subcategory, attrs: 'data-cat="' + esc(f.category) + '" data-sub="' + esc(f.subcategory) + '"' }, { label: f.name }]);
+  return '<div class="detail-top"><div><button class="gallery-main" type="button" id="galMain" data-lightbox aria-label="Open image full screen">' + imgBox(images[0], f.name + " - image 1", f.category) + "</button>" +
+    (images.length > 1 ? '<div class="thumbs" role="group" aria-label="Image gallery">' + images.map((im, i) => '<button class="thumb' + (i === 0 ? " active" : "") + '" type="button" data-gal="' + i + '" aria-label="Show image ' + (i + 1) + '">' + imgBox(im, f.name + " - thumbnail " + (i + 1), f.category) + "</button>").join("") + "</div>" : "") + "</div>" +
+    '<div><div class="eyebrow">' + esc(catLabel(cat)) + "</div><h2 id=\"modalTitle\">" + esc(f.name) + "</h2>" +
+    '<dl class="facts"><dt>Manufacturer</dt><dd>' + (maker ? '<button type="button" data-maker="' + esc(maker.id) + '">' + esc(f.manufacturer) + "</button>" : esc(f.manufacturer)) + "</dd>" +
+    "<dt>Country of origin</dt><dd>" + esc(f.country) + "</dd>" +
+    '<dt>Category</dt><dd><button type="button" data-cat="' + esc(f.category) + '">' + esc(catLabel(cat)) + "</button></dd>" +
+    '<dt>Subcategory</dt><dd><button type="button" data-cat="' + esc(f.category) + '" data-sub="' + esc(f.subcategory) + '">' + esc(f.subcategory) + "</button></dd>" +
+    "<dt>Introduced</dt><dd>" + esc(f.year) + "</dd><dt>Production period</dt><dd>" + esc(f.production || UNV) + "</dd><dt>Historical status</dt><dd>" + esc(f.status || UNV) + "</dd>" +
+    "<dt>Historical period</dt><dd>" + esc(eraOf(f.year).label) + "</dd></dl>" +
+    '<button class="btn btn-sm" type="button" data-fav="' + esc(f.id) + '" aria-pressed="' + isFav(f.id) + '">' + ic("heart") + " Bookmark</button></div></div>" +
+    (f.verifyNote ? '<div class="callout"><strong>Note:</strong> ' + esc(f.verifyNote) + "</div>" : "") +
+    '<div class="dsec"><h3>Overview</h3><p>' + esc(f.description) + "</p></div>" +
+    '<div class="dsec"><h3>History</h3><p>' + esc(f.history) + "</p></div>" +
+    '<div class="dsec"><h3>General Specifications</h3><table class="spec"><tbody>' + rows + '</tbody></table><p class="notice" style="margin-top:.8rem;border:0;padding:0">Specifications vary by production variant. Values are descriptive reference information only.</p></div>' +
+    '<div class="dsec"><h3>Mechanism Terminology</h3><p>' + esc(f.mechanism || UNV) + "</p></div>" +
+    (f.variants && f.variants.length ? '<div class="dsec"><h3>Variants &amp; Models</h3><div class="vgrid">' + f.variants.map(v => '<div class="vcell">' + imgBox(v.image || "", v.name + " - image", f.category, "small") + '<div class="t"><strong>' + esc(v.name) + "</strong><span>" + esc(v.period || UNV) + " &middot; " + esc(v.manufacturer || f.manufacturer) + "</span><p style=\"margin:.4rem 0 0;font-size:.85rem;color:var(--muted)\">" + esc(v.notes || "") + "</p></div></div>").join("") + "</div></div>" : "") +
+    '<div class="dsec"><h3>Educational Videos</h3>' + ((f.videos && f.videos.length) ? '<ul class="vlist">' + f.videos.map(v => "<li><span>" + esc(v.title) + '</span><a class="btn btn-sm" href="' + esc(v.url) + '" target="_blank" rel="noopener noreferrer"><span class="yt">' + ic("play") + "</span> Watch on YouTube</a></li>").join("") + "</ul>" : "<p>No video links yet.</p>") + "</div>" +
+    (related.length ? '<div class="dsec"><h3>Related Firearms</h3><div class="mini-grid">' + related.map(r => '<article class="card fcard" data-open="' + esc(r.id) + '">' + imgBox((r.images || [])[0] || "", r.name, r.category, "small") + '<div class="card-body"><h3 style="font-size:1.05rem"><button class="card-link" type="button" data-open="' + esc(r.id) + '">' + esc(r.name) + '</button></h3><p class="meta" style="margin:0">' + esc(r.manufacturer) + " &middot; " + esc(r.year) + "</p></div></article>").join("") + "</div></div>" : "") +
+    '<div class="dsec"><h3>Related Categories</h3><div class="subchips">' + fSubs(f).map(s => '<button class="chip" type="button" data-cat="' + esc(f.category) + '" data-sub="' + esc(s) + '">' + esc(s) + "</button>").join("") + (maker ? '<button class="chip" type="button" data-maker="' + esc(maker.id) + '">Manufacturer: ' + esc(maker.name) + "</button>" : "") + "</div></div>" +
+    '<p class="notice">This entry is provided for historical and educational reference only and is not instruction for building, modifying, acquiring or using firearms.</p>';
+}
+
+function renderMakerDetail(m) {
+  const entries = firearms.filter(f => f.manufacturer === m.name);
+  crumbs([{ label: "Home", attrs: 'data-close-go="home"' }, { label: "Manufacturers", attrs: 'data-close-go="manufacturers"' }, { label: m.region }, { label: m.country }, { label: m.name }]);
+  return '<div class="eyebrow">' + esc(m.region) + " &middot; " + esc(m.country) + '</div><h2 id="modalTitle">' + esc(m.name) + "</h2>" +
+    (m.verify ? '<div class="callout"><strong>Note:</strong> Some details for this manufacturer are incomplete. Items marked &ldquo;' + UNV + "&rdquo; need confirmation from reliable sources before publication.</div>" : "") +
+    '<dl class="facts"><dt>Country</dt><dd>' + esc(m.country) + "</dd><dt>Region</dt><dd>" + esc(m.region) + "</dd><dt>Founded</dt><dd>" + esc(m.founded || UNV) + "</dd><dt>Founder</dt><dd>" + esc(m.founder || UNV) + "</dd><dt>Headquarters</dt><dd>" + esc(m.hq || UNV) + "</dd>" +
+    "<dt>Official website</dt><dd>" + (m.website ? '<a href="' + esc(m.website) + '" target="_blank" rel="noopener noreferrer">' + esc(m.website.replace(/^https?:\/\//, "")) + "</a>" : "Not listed") + "</dd></dl>" +
+    '<div class="dsec"><h3>Historical Background</h3><p>' + esc(m.history) + "</p></div>" +
+    '<div class="dsec"><h3>Major Product Categories</h3><div class="subchips">' + makerCategories(m).map(c => '<button class="chip" type="button" data-cat="' + esc(c) + '">' + esc(c) + "</button>").join("") + "</div></div>" +
+    '<div class="dsec"><h3>Famous Models</h3><p>' + esc((m.famousModels || []).join(", ") || UNV) + "</p></div>" +
+    ((m.milestones && m.milestones.length) ? '<div class="dsec"><h3>Important Milestones</h3><table class="spec"><tbody>' + m.milestones.map(x => "<tr><th scope=\"row\">" + esc(x.year) + "</th><td>" + esc(x.text) + "</td></tr>").join("") + "</tbody></table></div>" : "") +
+    '<div class="dsec"><h3>Entries in this Archive</h3>' + (entries.length ? '<div class="mini-grid">' + entries.map(r => '<article class="card fcard" data-open="' + esc(r.id) + '">' + imgBox((r.images || [])[0] || "", r.name, r.category, "small") + '<div class="card-body"><h3 style="font-size:1.05rem"><button class="card-link" type="button" data-open="' + esc(r.id) + '">' + esc(r.name) + '</button></h3><p class="meta" style="margin:0">' + esc(r.category) + " &middot; " + esc(r.year) + "</p></div></article>").join("") + "</div>" : "<p>No entries yet. Add one to the <code>firearms</code> array with this manufacturer's name.</p>") + "</div>" +
+    '<p class="notice">Corporate information may change. Verify details with official sources before relying on them.</p>';
+}
+
+function renderTopicDetail(t) {
+  crumbs([{ label: "Home", attrs: 'data-close-go="home"' }, { label: "Knowledge", attrs: 'data-close-go="knowledge"' }, { label: t.title }]);
+  return '<div class="eyebrow">Firearms Knowledge</div><h2 id="modalTitle">' + esc(t.title) + "</h2>" + t.body.map(p => "<p>" + esc(p) + "</p>").join("") + '<p class="notice">Educational reference only; not operating instruction.</p>';
+}
+function renderTermDetail(g) {
+  crumbs([{ label: "Home", attrs: 'data-close-go="home"' }, { label: "Glossary", attrs: 'data-close-go="glossary"' }, { label: g.term }]);
+  const rel = glossary.filter(x => x.term !== g.term && (g.definition.toLowerCase().includes(x.term.toLowerCase()) || x.definition.toLowerCase().includes(g.term.toLowerCase()))).slice(0, 6);
+  return '<div class="eyebrow">Glossary</div><h2 id="modalTitle">' + esc(g.term) + "</h2><p>" + esc(g.definition) + "</p>" +
+    (rel.length ? '<div class="dsec"><h3>Related Terms</h3><div class="subchips">' + rel.map(x => '<button class="chip" type="button" data-term="' + esc(x.term) + '">' + esc(x.term) + "</button>").join("") + "</div></div>" : "");
+}
+
+function crumbs(parts) { el.crumbs.innerHTML = crumbsHTML(parts); }
+
+function renderModal() {
+  const top = state.modalStack[state.modalStack.length - 1];
+  if (!top) return;
+  let html = "";
+  if (top.type === "firearm") { const f = getFirearm(top.id); if (!f) return closeModal(); html = renderFirearmDetail(f); }
+  else if (top.type === "maker") { const m = getMaker(top.id); if (!m) return closeModal(); html = renderMakerDetail(m); }
+  else if (top.type === "topic") { const t = educationalTopics.find(x => x.id === top.id); if (!t) return closeModal(); html = renderTopicDetail(t); }
+  else if (top.type === "term") { const g = glossary.find(x => x.term === top.id); if (!g) return closeModal(); html = renderTermDetail(g); }
+  el.modalContent.innerHTML = html;
+  el.modalBack.hidden = state.modalStack.length < 2;
+  el.modalPanel.scrollTop = 0;
+  el.modal.setAttribute("aria-labelledby", "modalTitle");
+  try { history.replaceState(null, "", "#/" + top.type + "/" + encodeURIComponent(top.id)); } catch (e) { /* ignore */ }
+}
+
+function openRoute(type, id) {
+  const top = state.modalStack[state.modalStack.length - 1];
+  if (top && top.type === type && top.id === id) return;
+  if (el.modal.hidden) {
+    state.lastFocus = document.activeElement;
+    el.modal.hidden = false;
+    document.body.classList.add("noscroll");
+    requestAnimationFrame(() => el.modal.classList.add("show"));
+  }
+  state.modalStack.push({ type, id });
+  renderModal();
+  el.modalPanel.focus({ preventScroll: true });
+}
+function modalBack() { if (state.modalStack.length > 1) { state.modalStack.pop(); renderModal(); } }
+function closeModal() {
+  if (el.modal.hidden) return;
+  state.modalStack = [];
+  el.modal.classList.remove("show");
+  document.body.classList.remove("noscroll");
+  setTimeout(() => { el.modal.hidden = true; el.modalContent.innerHTML = ""; }, 220);
+  try { history.replaceState(null, "", location.pathname + location.search); } catch (e) { /* ignore */ }
+  if (state.lastFocus && state.lastFocus.focus) { try { state.lastFocus.focus({ preventScroll: true }); } catch (e) { /* ignore */ } }
+}
+const openFirearm = id => openRoute("firearm", id);
+
+function setGallery(i) {
+  const top = state.modalStack[state.modalStack.length - 1];
+  const f = top && top.type === "firearm" && getFirearm(top.id);
+  if (!f) return;
+  const src = (f.images || [])[i] || "";
+  $("#galMain").innerHTML = imgBox(src, f.name + " - image " + (i + 1), f.category);
+  $("#galMain").dataset.index = i;
+  $$(".thumb", el.modalContent).forEach((t, k) => t.classList.toggle("active", k === i));
+}
+function openLightbox() {
+  const top = state.modalStack[state.modalStack.length - 1];
+  const f = top && top.type === "firearm" && getFirearm(top.id);
+  if (!f) return;
+  const i = Number($("#galMain").dataset.index || 0);
+  const src = (f.images || [])[i] || "";
+  el.lightboxInner.innerHTML = imgBox(src, f.name + " - full-size image", f.category) + "<p>" + esc(f.name) + "</p>";
+  el.lightbox.hidden = false;
+  $("#lightboxClose").focus();
+}
+function closeLightbox() { el.lightbox.hidden = true; el.lightboxInner.innerHTML = ""; }
+
+// ================================
+// FILTERS
+// ================================
+function setCategoryFilter(cat, sub) {
+  state.filters = { category: cat || "", subcategory: sub || "", manufacturer: "", country: "", period: "", action: "" };
+  state.favOnly = false; state.visible = PAGE_SIZE;
+  populateFilters(); renderExplorer();
+}
+function goToExplorer(cat, sub) {
+  closeModal(); closeMenus();
+  setCategoryFilter(cat, sub);
+  scrollToId("explorer");
+}
+function resetFilters() { state.filters = { category: "", subcategory: "", manufacturer: "", country: "", period: "", action: "" }; state.favOnly = false; state.sort = "az"; el.sortBy.value = "az"; state.visible = PAGE_SIZE; populateFilters(); renderExplorer(); }
+
+function scrollToId(id) {
+  const t = document.getElementById(id) || document.getElementById("home");
+  const y = t.getBoundingClientRect().top + window.pageYOffset - (id === "home" ? 0 : 68);
+  window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+}
+
+// ================================
+// SEARCH
+// ================================
+let searchIndex = [];
+function buildSearchIndex() {
+  searchIndex = [];
+  firearms.forEach(f => searchIndex.push({ type: "Firearm", id: f.id, title: f.name, sub: f.manufacturer + " - " + f.country + " - " + f.year,
+    hay: [f.name, f.manufacturer, f.country, f.category, fSubs(f).join(" "), f.year, f.description, f.history, (f.tags || []).join(" "), (f.variants || []).map(v => v.name).join(" "), (f.specifications || {}).calibre, f.actionType].join(" ").toLowerCase() }));
+  manufacturers.forEach(m => searchIndex.push({ type: "Manufacturer", id: m.id, title: m.name, sub: m.country + " - " + m.region,
+    hay: [m.name, m.country, m.region, m.history, (m.famousModels || []).join(" ")].join(" ").toLowerCase() }));
+  categories.forEach(c => {
+    searchIndex.push({ type: "Category", id: c.name, title: catLabel(c), sub: c.subcategories.length + " subcategories", hay: [c.name, c.full, c.description, c.subcategories.join(" ")].join(" ").toLowerCase() });
+    c.subcategories.forEach(s => searchIndex.push({ type: "Category", id: c.name, subId: s, title: s, sub: "Subcategory of " + catLabel(c), hay: (s + " " + c.name).toLowerCase() }));
+  });
+  uniq(firearms.map(f => f.country).concat(manufacturers.map(m => m.country))).forEach(c => searchIndex.push({ type: "Country", id: c, title: c, sub: "Show firearms from this country", hay: c.toLowerCase() }));
+  glossary.forEach(g => searchIndex.push({ type: "Glossary", id: g.term, title: g.term, sub: g.definition.slice(0, 70) + "...", hay: (g.term + " " + g.definition).toLowerCase() }));
+  educationalTopics.forEach(t => searchIndex.push({ type: "Topic", id: t.id, title: t.title, sub: t.summary, hay: (t.title + " " + t.summary + " " + t.body.join(" ")).toLowerCase() }));
+  historicalTimeline.forEach(t => searchIndex.push({ type: "Timeline", id: String(t.year), title: t.year + " - " + t.title, sub: "Historical timeline", hay: (t.year + " " + t.title + " " + t.text).toLowerCase() }));
+}
+function runSearch(q) {
+  const query = q.trim().toLowerCase();
+  const tokens = query.split(/\s+/).filter(Boolean);
+  if (!tokens.length) return [];
+  const boost = { Firearm: 0.5, Manufacturer: 0.4, Category: 0.3, Country: 0.2 };
+  return searchIndex.map(it => {
+    if (!tokens.every(t => it.hay.includes(t))) return null;
+    const title = it.title.toLowerCase();
+    let s = 1;
+    if (title === query) s = 5; else if (title.startsWith(tokens[0])) s = 4; else if (tokens.every(t => title.includes(t))) s = 3; else if (it.sub && tokens.every(t => it.sub.toLowerCase().includes(t))) s = 2;
+    return { it, s: s + (boost[it.type] || 0) };
+  }).filter(Boolean).sort((a, b) => b.s - a.s || a.it.title.localeCompare(b.it.title)).map(x => x.it);
+}
+function resultAttrs(it) { return 'data-sr-type="' + esc(it.type) + '" data-sr-id="' + esc(it.id) + '"' + (it.subId ? ' data-sr-sub="' + esc(it.subId) + '"' : ""); }
+
+function updateSearch() {
+  const q = el.searchInput.value;
+  el.searchClear.hidden = !q;
+  if (!q.trim()) { el.suggest.hidden = true; el.searchInput.setAttribute("aria-expanded", "false"); el.searchResults.innerHTML = ""; state.searchHits = []; return; }
+  const hits = runSearch(q);
+  state.searchHits = hits;
+  // suggestions
+  state.activeSuggest = -1;
+  const top = hits.slice(0, 8);
+  el.suggest.innerHTML = top.length ? top.map((it, i) => '<li role="option" id="sg' + i + '" ' + resultAttrs(it) + "><span>" + esc(it.title) + "</span><small>" + esc(it.type) + "</small></li>").join("") : '<li role="option" aria-disabled="true"><span>No suggestions</span></li>';
+  el.suggest.hidden = false; el.searchInput.setAttribute("aria-expanded", "true");
+  // results
+  if (!hits.length) { el.searchResults.innerHTML = '<div class="empty"><strong>No results for &ldquo;' + esc(q.trim()) + "&rdquo;.</strong><br>Try a model name, manufacturer, country or category &mdash; for example &ldquo;Colt&rdquo;, &ldquo;Germany&rdquo; or &ldquo;Revolver&rdquo;.</div>"; return; }
+  const groups = {};
+  hits.forEach(h => (groups[h.type] = groups[h.type] || []).push(h));
+  let html = '<p class="count-pill"><b>' + hits.length + "</b> result" + (hits.length === 1 ? "" : "s") + " for &ldquo;" + esc(q.trim()) + "&rdquo;</p>";
+  if (groups.Firearm) html += '<div class="sr-group"><h3>Firearms (' + groups.Firearm.length + ')</h3><div class="grid">' + groups.Firearm.slice(0, 12).map(h => firearmCard(getFirearm(h.id))).join("") + "</div></div>";
+  ["Manufacturer", "Category", "Country", "Glossary", "Topic", "Timeline"].forEach(t => {
+    if (groups[t]) html += '<div class="sr-group"><h3>' + t + (t === "Category" ? "" : "") + " (" + groups[t].length + ')</h3><ul class="sr-list">' + groups[t].slice(0, 10).map(h => '<li><button class="sr-row" type="button" ' + resultAttrs(h) + "><span>" + esc(h.title) + "</span><span class=\"sr-type\">" + esc(h.sub) + "</span></button></li>").join("") + "</ul></div>";
+  });
+  el.searchResults.innerHTML = html;
+  observeReveals();
+}
+function activateResult(type, id, sub) {
+  el.suggest.hidden = true;
+  if (type === "Firearm") openRoute("firearm", id);
+  else if (type === "Manufacturer") openRoute("maker", id);
+  else if (type === "Category") goToExplorer(id, sub || "");
+  else if (type === "Country") { setCategoryFilter("", ""); state.filters.country = id; populateFilters(); renderExplorer(); scrollToId("explorer"); }
+  else if (type === "Glossary") openRoute("term", id);
+  else if (type === "Topic") openRoute("topic", id);
+  else if (type === "Timeline") { state.era = eraOf(Number(id)).id; renderTimeline(); scrollToId("history"); }
+}
+function moveSuggest(dir) {
+  const items = $$("li[data-sr-type]", el.suggest);
+  if (!items.length) return;
+  state.activeSuggest = (state.activeSuggest + dir + items.length) % items.length;
+  items.forEach((li, i) => li.classList.toggle("active", i === state.activeSuggest));
+  el.searchInput.setAttribute("aria-activedescendant", items[state.activeSuggest].id);
+  items[state.activeSuggest].scrollIntoView({ block: "nearest" });
+}
+function clearSearch() { el.searchInput.value = ""; updateSearch(); el.searchInput.focus(); }
+function renderTryChips() {
+  ["Beretta 92FS", "Colt", "MG42", "Shotgun", "Germany", "Revolver"].forEach(t => {
+    const b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.textContent = t; b.dataset.try = t; el.tryChips.appendChild(b);
+  });
+}
+
+// ================================
+// THEME
+// ================================
+function applyTheme(t) {
+  document.documentElement.setAttribute("data-theme", t);
+  el.themeIcon.innerHTML = ic(t === "dark" ? "sun" : "moon");
+  el.themeBtn.setAttribute("aria-label", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
+}
+function toggleTheme() {
+  const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  store.set("fka_theme", next);
+  applyTheme(next);
+}
+
+// ================================
+// UI HELPERS (menus, reveal, counters)
+// ================================
+function closeMenus() {
+  el.megaItem.classList.remove("open"); el.megaBtn.setAttribute("aria-expanded", "false");
+  el.nav.classList.remove("open"); el.burger.setAttribute("aria-expanded", "false");
+}
+let revealObs = null;
+function observeReveals() {
+  const items = $$(".reveal:not(.in)");
+  if (!("IntersectionObserver" in window)) { items.forEach(i => i.classList.add("in")); return; }
+  if (!revealObs) revealObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); revealObs.unobserve(e.target); } }), { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
+  items.forEach(i => revealObs.observe(i));
+}
+function observeCounters() {
+  const run = c => {
+    const target = Number(c.dataset.target), reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) { c.textContent = target; return; }
+    const start = performance.now(), dur = 1100;
+    const tick = now => { const p = Math.min(1, (now - start) / dur); c.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); else c.textContent = target; };
+    requestAnimationFrame(tick);
+  };
+  if (!("IntersectionObserver" in window)) { $$(".count[data-target]").forEach(c => { c.textContent = c.dataset.target; }); return; }
+  const o = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { run(e.target); o.unobserve(e.target); } }), { threshold: 0.4 });
+  $$(".count[data-target]").forEach(c => o.observe(c));
+}
+
+// ================================
+// ROUTING (hash state for sharing/reopening a detail view)
+// ================================
+function routeFromHash() {
+  const m = location.hash.match(/^#\/(firearm|maker|topic|term)\/(.+)$/);
+  if (!m) return;
+  let id = m[2]; try { id = decodeURIComponent(id); } catch (e) { /* keep */ }
+  state.modalStack = []; if (!el.modal.hidden) { el.modal.hidden = true; }
+  openRoute(m[1], id);
+}
+
+// ================================
+// EVENT LISTENERS
+// ================================
+document.addEventListener("click", e => {
+  const t = e.target;
+  const fav = t.closest("[data-fav]");
+  if (fav) { e.preventDefault(); e.stopPropagation(); toggleFav(fav.dataset.fav); return; }
+  if (t.closest("[data-lightbox]")) { openLightbox(); return; }
+  const gal = t.closest("[data-gal]");
+  if (gal) { setGallery(Number(gal.dataset.gal)); return; }
+  const open = t.closest("[data-open]");
+  if (open) { e.preventDefault(); openRoute("firearm", open.dataset.open); return; }
+  const mk = t.closest("[data-maker]");
+  if (mk) { e.preventDefault(); openRoute("maker", mk.dataset.maker); return; }
+  const tp = t.closest("[data-topic]");
+  if (tp) { openRoute("topic", tp.dataset.topic); return; }
+  const tm = t.closest("[data-term]");
+  if (tm) { openRoute("term", tm.dataset.term); return; }
+  const cg = t.closest("[data-close-go]");
+  if (cg) { e.preventDefault(); closeModal(); closeMenus(); scrollToId(cg.dataset.closeGo); return; }
+  const cat = t.closest("[data-cat]");
+  if (cat) { e.preventDefault(); goToExplorer(cat.dataset.cat, cat.dataset.sub || ""); return; }
+  const sc = t.closest("[data-scroll]");
+  if (sc) { e.preventDefault(); closeMenus(); scrollToId(sc.dataset.scroll); return; }
+  const sr = t.closest("[data-sr-type]");
+  if (sr) { e.preventDefault(); activateResult(sr.dataset.srType, sr.dataset.srId, sr.dataset.srSub); return; }
+  const era = t.closest("[data-era]");
+  if (era) { state.era = era.dataset.era; renderTimeline(); return; }
+  const tr = t.closest("[data-try]");
+  if (tr) { el.searchInput.value = tr.dataset.try; updateSearch(); el.searchInput.focus(); return; }
+  if (t.closest("[data-close]")) { closeModal(); return; }
+  // click outside menus
+  if (!t.closest("#megaItem")) { el.megaItem.classList.remove("open"); el.megaBtn.setAttribute("aria-expanded", "false"); }
+});
+
+function initEvents() {
+  el.megaBtn.addEventListener("click", () => { const o = el.megaItem.classList.toggle("open"); el.megaBtn.setAttribute("aria-expanded", o ? "true" : "false"); });
+  el.burger.addEventListener("click", () => { const o = el.nav.classList.toggle("open"); el.burger.setAttribute("aria-expanded", o ? "true" : "false"); });
+  $("#navSearch").addEventListener("click", () => { closeMenus(); scrollToId("search"); setTimeout(() => el.searchInput.focus({ preventScroll: true }), 450); });
+  $("#navFav").addEventListener("click", () => { closeMenus(); scrollToId("favorites"); });
+  el.themeBtn.addEventListener("click", toggleTheme);
+  el.toTop.addEventListener("click", () => scrollToId("home"));
+  window.addEventListener("scroll", () => el.toTop.classList.toggle("show", window.pageYOffset > 700), { passive: true });
+
+  // search
+  el.searchInput.addEventListener("input", updateSearch);
+  el.searchInput.addEventListener("focus", () => { if (el.searchInput.value.trim()) updateSearch(); });
+  el.searchInput.addEventListener("keydown", e => {
+    if (e.key === "ArrowDown") { e.preventDefault(); moveSuggest(1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); moveSuggest(-1); }
+    else if (e.key === "Enter") { const a = $("li.active[data-sr-type]", el.suggest); if (a) { e.preventDefault(); activateResult(a.dataset.srType, a.dataset.srId, a.dataset.srSub); } else { el.suggest.hidden = true; } }
+    else if (e.key === "Escape") { el.suggest.hidden = true; }
+  });
+  el.suggest.addEventListener("mousedown", e => e.preventDefault());
+  el.searchClear.addEventListener("click", clearSearch);
+  document.addEventListener("click", e => { if (!e.target.closest(".search-box")) el.suggest.hidden = true; });
+
+  // explorer filters
+  el.fCategory.addEventListener("change", () => { state.filters.category = el.fCategory.value; state.filters.subcategory = ""; state.visible = PAGE_SIZE; populateFilters(); renderExplorer(); });
+  [["fSub", "subcategory"], ["fMaker", "manufacturer"], ["fCountry", "country"], ["fPeriod", "period"], ["fAction", "action"]].forEach(([k, f]) =>
+    el[k].addEventListener("change", () => { state.filters[f] = el[k].value; state.visible = PAGE_SIZE; renderExplorer(); }));
+  el.sortBy.addEventListener("change", () => { state.sort = el.sortBy.value; renderExplorer(); });
+  el.resetFilters.addEventListener("click", resetFilters);
+  el.favOnly.addEventListener("click", () => { state.favOnly = !state.favOnly; state.visible = PAGE_SIZE; renderExplorer(); });
+  el.loadMore.addEventListener("click", () => { state.visible += PAGE_SIZE; renderExplorer(); });
+
+  // manufacturer filters
+  el.mRegion.addEventListener("change", () => { state.maker.region = el.mRegion.value; state.maker.country = ""; populateMakerFilters(); renderMakers(); });
+  el.mCountry.addEventListener("change", () => { state.maker.country = el.mCountry.value; renderMakers(); });
+  el.mCategory.addEventListener("change", () => { state.maker.category = el.mCategory.value; renderMakers(); });
+  el.mName.addEventListener("input", () => { state.maker.q = el.mName.value; renderMakers(); });
+  el.mReset.addEventListener("click", () => { state.maker = { region: "", country: "", category: "", q: "" }; el.mName.value = ""; populateMakerFilters(); renderMakers(); });
+
+  el.glossSearch.addEventListener("input", renderGlossary);
+
+  // modal
+  el.modalBack.addEventListener("click", modalBack);
+  $("#lightboxClose").addEventListener("click", closeLightbox);
+  el.lightbox.addEventListener("click", e => { if (e.target === el.lightbox) closeLightbox(); });
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") { if (!el.lightbox.hidden) closeLightbox(); else if (!el.modal.hidden) closeModal(); else closeMenus(); }
+    if (e.key === "Tab" && !el.modal.hidden && el.lightbox.hidden) { // keep focus inside the dialog
+      const f = $$("a[href],button:not([disabled]),select,input,[tabindex]:not([tabindex='-1'])", el.modalPanel).filter(x => x.offsetParent !== null);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (!el.modalPanel.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+      else if (e.shiftKey && (document.activeElement === first || document.activeElement === el.modalPanel)) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  // Enter/Space on whole-card for keyboard users is handled by the inner title button.
+  window.addEventListener("hashchange", routeFromHash);
+}
+
+// ================================
+// INIT
+// ================================
+function init() {
+  $("#year").textContent = new Date().getFullYear();
+  applyTheme(document.documentElement.getAttribute("data-theme") || "dark");
+  renderMega(); renderCategories(); renderFeatured();
+  populateFilters(); renderExplorer(); renderFavorites();
+  populateMakerFilters(); renderMakers();
+  renderTimeline(); renderKnowledge(); renderGlossary(); renderVideos(); renderStats();
+  buildSearchIndex(); renderTryChips();
+  syncFavUI();
+  initEvents();
+  observeReveals();
+  routeFromHash();
+}
+init();
+</script>
+</body>
+</html>
